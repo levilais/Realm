@@ -4,6 +4,30 @@ using UnityEngine;
 
 public class NavigationManager : MonoBehaviour {
 
+    List<string> Menu = new List<string>() 
+    { 
+        "Profile", 
+        "Displays" 
+    };
+
+    List<string> Profile = new List<string>()
+    {
+        "Back",
+        "Info",
+    };
+
+    List<string> Displays = new List<string>()
+    {
+        "Back",
+        "New",
+        "Edit",
+        "Wayposts",
+        "Anchor"
+    };
+
+
+
+
 
 
 	// Use this for initialization
