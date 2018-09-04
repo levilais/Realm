@@ -5,18 +5,24 @@ using UnityEngine.UI;
 
 public class MenuButton : MonoBehaviour
 {
-    MenuButtonStandardInitializer menuButton;
+    public GameObject menuPanelObject;
+    public GameObject menuPanelPF;
 
-    void Start()
+    public void NavigateToMenuClicked()
     {
-        //Debug.Log("start called");
-        //HardCodeName();
-        ////SetButtonProperties(menuButton);
-        //Debug.Log("buttonName = " + menuButton.buttonName);
-    }
+        var menuPanelScript = menuPanelObject.GetComponent<MenuPanel>();
+        if (transform.name != "Back") {
+            menuPanelScript.navigationHistory.Add(menuPanelObject.name);
+            menuPanelScript.menuName = transform.name;
+            menuPanelObject.name = transform.name;
+        } else {
+            var lastName = menuPanelScript.navigationHistory[menuPanelScript.navigationHistory.Count - 1];
+            Debug.Log("name: " + lastName);
+            menuPanelScript.menuName = lastName;
+            menuPanelObject.name = lastName;
+            menuPanelScript.navigationHistory.RemoveAt(menuPanelScript.navigationHistory.Count - 1);
+        }
 
-    //void HardCodeName() 
-    //{
-    //    menuButton = new MenuButtonStandard(gameObject, "Displays");
-    //}
+        menuPanelObject.GetComponent<MenuPanel>().NavigateToMenu();
+    }
 }
