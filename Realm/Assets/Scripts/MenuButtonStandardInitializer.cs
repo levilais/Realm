@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class MenuButtonStandard : MonoBehaviour
+public class MenuButtonStandardInitializer : MonoBehaviour
 {
     public Text titleText;
     public Button button;
@@ -12,7 +12,7 @@ public class MenuButtonStandard : MonoBehaviour
     public Sprite imageDefault;
     public Sprite imagePressed;
 
-    public MenuButtonStandard(GameObject buttonParent, string _buttonName)
+    public MenuButtonStandardInitializer(GameObject buttonParent, string _buttonName)
     {
         InitializeButton(buttonParent, _buttonName);
     }
@@ -43,15 +43,7 @@ public class MenuButtonStandard : MonoBehaviour
         button.image.sprite = imageDefault;
 
         SpriteState spriteState = new SpriteState();
-        spriteState = button.spriteState;
-        if (button.spriteState.pressedSprite)
-        {
-            spriteState.pressedSprite = imagePressed;
-        }
-        else
-        {
-            spriteState.pressedSprite = imageDefault;
-        }
+        spriteState.pressedSprite = imagePressed;
         button.spriteState = spriteState;
     }
 }

@@ -3,20 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class NavigationManager : MonoBehaviour {
-
-    List<string> Menu = new List<string>() 
+    
+    // STANDARD MENU ITEMS
+    public List<string> MainMenu = new List<string>() 
     { 
         "Profile", 
         "Displays" 
     };
 
-    List<string> Profile = new List<string>()
+    public List<string> Profile = new List<string>()
     {
         "Back",
         "Info",
     };
 
-    List<string> Displays = new List<string>()
+    public List<string> Displays = new List<string>()
     {
         "Back",
         "New",
@@ -25,18 +26,22 @@ public class NavigationManager : MonoBehaviour {
         "Anchor"
     };
 
-
-
-
-
-
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    public List<string> SubMenuItmesForMenuNamed(string currentMenu) {
+        List<string> returnValue;
+        switch (currentMenu) {
+            case "Main Menu":
+                returnValue = MainMenu;
+                break;
+            case "Profile":
+                returnValue = Profile;
+                break;
+            case "Displays":
+                returnValue = Displays;
+                break;
+            default:
+                return null;
+                break;
+        }
+        return returnValue;
+    }
 }

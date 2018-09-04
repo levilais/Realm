@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class MenuButton : MonoBehaviour
 {
-    MenuButtonStandard menuButton;
+    MenuButtonStandardInitializer menuButton;
 
     void Start()
     {
@@ -15,8 +15,8 @@ public class MenuButton : MonoBehaviour
         //Debug.Log("buttonName = " + menuButton.buttonName);
     }
 
-    void HardCodeName() 
-    {
-        menuButton = new MenuButtonStandard(gameObject, "Displays");
-    }
+    //void HardCodeName() 
+    //{
+    //    menuButton = new MenuButtonStandard(gameObject, "Displays");
+    //}
 }

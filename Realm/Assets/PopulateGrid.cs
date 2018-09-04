@@ -6,12 +6,13 @@ using UnityEngine.UI;
 public class PopulateGrid : MonoBehaviour
 {
     public GameObject menuButtonStandardPrefab; // This is our prefab object that will be exposed in the inspector
+    public GameObject menuParent;
 
-    List<string> buttons = new List<string>() { "New", "Edit", "Wayposts", "Anchor" };
+    //List<string> buttons = new List<string>() { "New", "Edit", "Wayposts", "Anchor" };
 
     void Start()
     {
-        Populate();
+        CreateButtons();
     }
 
     void Update()
@@ -19,19 +20,20 @@ public class PopulateGrid : MonoBehaviour
 
     }
 
-    void Populate()
+    void CreateButtons()
     {
-        GameObject newObj; // Create GameObject instance
+        var menuButtons = menuParent.GetComponent<MenuPanelStandard>().subMenuItems;
 
-        for (int i = 0; i < buttons.Count; i++)
+        // We start at index 1 because the left button is first in list and separate
+        GameObject newMenuButton; // Create GameObject instance
+        for (int i = 1; i < menuButtons.Count; i++)
         {
             // Create new instances of our prefab until we've created as many as we specified
-            newObj = (GameObject)Instantiate(menuButtonStandardPrefab, transform);
-            MenuButtonStandard menuButton = new MenuButtonStandard(newObj, buttons[i]);
+            newMenuButton = (GameObject)Instantiate(menuButtonStandardPrefab, transform);
+            MenuButtonStandardInitializer menuButton = new MenuButtonStandardInitializer(newMenuButton, menuButtons[i]);
 
             //// Randomize the color of our image
             //newObj.GetComponent().color = Random.ColorHSV();
         }
-
     }
 }
