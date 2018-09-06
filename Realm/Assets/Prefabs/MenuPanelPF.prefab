@@ -250,6 +250,7 @@ GameObject:
   - component: {fileID: 222703522854565546}
   - component: {fileID: 114149109138556532}
   - component: {fileID: 114332209190581050}
+  - component: {fileID: 114078931295821356}
   m_Layer: 5
   m_Name: MenuPanelPF
   m_TagString: Untagged
@@ -257,6 +258,39 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &114078931295821356
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1992899094733406}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ef20d02c810d4fddb4cf9501960e6be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  menuManager: {fileID: 0}
+  menuName: 0
+  menuDisplayType: 0
+  menuUseType: 0
+  subMenuItems: 0100000002000000
+  nextButtonExists: 0
+  backButtonExists: 0
+  headerIcon: {fileID: 1052923869254122}
+  headerTitle: {fileID: 1242843605454100}
+  exitButton: {fileID: 1954401693607682}
+  leftButton: {fileID: 1109017853499300}
+  middleButtons: {fileID: 1783747354644272}
+  rightButton: {fileID: 1857798851826048}
+  leftButtonShort: {fileID: 0}
+  leftButtonTitle: {fileID: 0}
+  rightButtonShort: {fileID: 0}
+  rightButtonTitle: {fileID: 0}
+  messageText: {fileID: 0}
+  headerMessageText: {fileID: 0}
+  inputScrollView: {fileID: 0}
+  MenuButtonPF: {fileID: 1348476042403918, guid: 75df25727a496485caca4a3dbf3671b5,
+    type: 2}
 --- !u!114 &114149109138556532
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -457,20 +491,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00194dd17f7b74c95bbf782f60091715, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  menuName: Main Menu
-  menuButtonPrefab: {fileID: 1348476042403918, guid: 75df25727a496485caca4a3dbf3671b5,
-    type: 2}
-  leftButton: {fileID: 1109017853499300}
-  middleButtons: {fileID: 1783747354644272}
-  middleButtonsContentObject: {fileID: 1460543409085574}
-  rightButton: {fileID: 1857798851826048}
-  headerIcon: {fileID: 1052923869254122}
-  headerTitle: {fileID: 1242843605454100}
-  backButtonExists: 0
-  nextButtonExists: 0
-  isNavigationOnly: 1
-  navigationHistory: []
-  subMenuItems: []
 --- !u!114 &114388833297093084
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -800,7 +820,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menuPanelObject: {fileID: 1992899094733406}
-  menuPanelPF: {fileID: 1992899094733406}
 --- !u!114 &114898945087062088
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -840,7 +859,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menuPanelObject: {fileID: 1992899094733406}
-  menuPanelPF: {fileID: 1992899094733406}
 --- !u!114 &114968264624048150
 MonoBehaviour:
   m_ObjectHideFlags: 1
