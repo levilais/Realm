@@ -275,6 +275,7 @@ MonoBehaviour:
   menuUseType: 0
   subMenuItems: 0100000002000000
   nextButtonExists: 0
+  nextButtonCustomTitle: 
   backButtonExists: 0
   headerIcon: {fileID: 1052923869254122}
   headerTitle: {fileID: 1242843605454100}
@@ -1071,11 +1072,11 @@ RectTransform:
   m_Father: {fileID: 224053630600986148}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -619, y: 0}
-  m_SizeDelta: {x: 619, y: 140}
-  m_Pivot: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: -200, y: 140}
+  m_Pivot: {x: 0.5, y: 0}
 --- !u!224 &224262337838055930
 RectTransform:
   m_ObjectHideFlags: 1
