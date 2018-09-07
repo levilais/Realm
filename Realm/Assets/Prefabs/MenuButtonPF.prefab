@@ -103,8 +103,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menuPanelObject: {fileID: 0}
-  menuPanelPF: {fileID: 1992899094733406, guid: c74b0aac69d814ec9a0c752f071cfc34,
-    type: 2}
 --- !u!114 &114646934302535440
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -214,7 +212,7 @@ MonoBehaviour:
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
+    m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: Back
 --- !u!222 &222288395296841606
