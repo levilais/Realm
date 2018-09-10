@@ -53,7 +53,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 224199770956223322}
-  - component: {fileID: 114555068156874206}
   m_Layer: 5
   m_Name: TextfieldMenuItemPF
   m_TagString: Untagged
@@ -72,7 +71,6 @@ GameObject:
   - component: {fileID: 222610714664514820}
   - component: {fileID: 114432920430068020}
   - component: {fileID: 114006000011682650}
-  - component: {fileID: 114058857933366382}
   m_Layer: 5
   m_Name: TextField
   m_TagString: Untagged
@@ -145,18 +143,7 @@ MonoBehaviour:
   m_CharacterLimit: 0
   m_OnEndEdit:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: 
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: UnityEngine.UI.InputField+SubmitEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
   m_OnValueChanged:
@@ -204,18 +191,6 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 
---- !u!114 &114058857933366382
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1534529058323056}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a2d11fe1f8db470e8b2a614b52001b8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  viewManager: {fileID: 0}
 --- !u!114 &114199798068329504
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -309,21 +284,6 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
---- !u!114 &114555068156874206
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1463764480839768}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b014f6cc9e3ca427e9d6353f10473cbb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  viewManager: {fileID: 0}
-  titleText: {fileID: 1931561230391178}
-  placeholderText: {fileID: 1238152681400578}
-  textField: {fileID: 0}
 --- !u!222 &222040670149778884
 CanvasRenderer:
   m_ObjectHideFlags: 1
@@ -363,10 +323,10 @@ RectTransform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: -20, y: 105}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!224 &224263794079880474
 RectTransform:
