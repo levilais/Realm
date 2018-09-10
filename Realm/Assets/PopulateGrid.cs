@@ -18,10 +18,12 @@ public class PopulateGrid : MonoBehaviour
 
     void Populate()
     {
-        GameObject newObj; // Create GameObject instance
-        for (int i = 0; i < numberToCreate; i++)
+        MenuObject menuObject = transform.GetComponentInParent<MenuObject>();
+        GameObject newTextfieldMenuItemObj; // Create GameObject instance
+        for (int i = 0; i < menuObject.textfields.Count; i++)
         {
-            newObj = (GameObject)Instantiate(textfieldMenuItemPF, transform);
+            newTextfieldMenuItemObj = (GameObject)Instantiate(textfieldMenuItemPF, transform);
+            newTextfieldMenuItemObj.name = menuObject.textfields[i].ToString().Replace("_"," ");
         }
     }
 

@@ -38,7 +38,7 @@ public class MenuObject : MonoBehaviour {
     [Header("Tall Panel Objects")]
     public GameObject headerMessageText;
     public GameObject inputScrollView;
-
+    public List<TextfieldMenuItemTitle> textfields;
 
     [Space(6)]
     [Header("Prefabs")]
@@ -68,6 +68,21 @@ public class MenuObject : MonoBehaviour {
         Navigation,
         Input,
         Tool
+    }
+
+    public enum TextfieldMenuItemTitle
+    {
+        Realm_Name,
+        Account_Manager_Name,
+        Company_Name,
+        Contact_Email,
+        Contact_Phone,
+        Dumby
+    }
+
+    string menuItemTitleString(TextfieldMenuItemTitle textfieldMenuItemTitle)
+    {
+        return textfieldMenuItemTitle.ToString().Replace("_", " ");
     }
 
     void Start()
