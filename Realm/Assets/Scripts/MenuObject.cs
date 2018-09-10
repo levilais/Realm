@@ -76,6 +76,17 @@ public class MenuObject : MonoBehaviour {
         InstantiateMenuObject();
     }
 
+    private void OnEnable()
+    {
+        InstantiateMenuObject();
+    }
+
+    //public void GoToMenuOnButtonClicked(string buttonName)
+    //{
+    //    MenuManager.menuManager.performSegue(buttonName, gameObject);
+    //    InstantiateMenuObject();
+    //}
+
     public void InstantiateMenuObject() {
         rightButton.SetActive(nextButtonExists);
         PopulateButtons();
@@ -161,6 +172,11 @@ public class MenuObject : MonoBehaviour {
             timesThrough -= 1;
         }
 
+        foreach (Transform child in transform.GetComponentInChildren<GridLayoutGroup>().gameObject.transform)
+        {
+            Destroy(child.gameObject);
+        }
+
         for (int i = 1; i < timesThrough; i++)
         {
             // Create new instances of our prefab until we've created as many as we specified
@@ -172,4 +188,5 @@ public class MenuObject : MonoBehaviour {
         }
             leftButton.name = subMenuItems[0].ToString();
     }
+
 }
