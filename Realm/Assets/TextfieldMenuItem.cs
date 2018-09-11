@@ -10,9 +10,13 @@ public class TextfieldMenuItem : MonoBehaviour
     public GameObject placeholderText;
     public GameObject textField;
 
-    void Start() {   
-        titleText.GetComponent<Text>().text = transform.name;
-        placeholderText.GetComponent<Text>().text = "Enter " + transform.name + "...";
+    void Start() {
+        SetTitleAndPlaceholder(transform.name);
         textField.GetComponent<TextfieldOverlay>().viewManager = viewManager;
+    }
+
+    public void SetTitleAndPlaceholder(string menuName) {
+        titleText.GetComponent<Text>().text = menuName;
+        placeholderText.GetComponent<Text>().text = "Enter " + menuName + "...";
     }
 }

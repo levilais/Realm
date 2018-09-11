@@ -177,7 +177,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 2
     m_MaxSize: 40
-    m_Alignment: 3
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 0
     m_HorizontalOverflow: 1
@@ -367,7 +367,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 2
     m_MaxSize: 40
-    m_Alignment: 3
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -528,36 +528,54 @@ Prefab:
     - target: {fileID: 224871699992241232, guid: 6954a9cdfd1484b75ab9a6500266422a,
         type: 2}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224871699992241232, guid: 6954a9cdfd1484b75ab9a6500266422a,
         type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224329026576665020, guid: 6954a9cdfd1484b75ab9a6500266422a,
         type: 2}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: -258
       objectReference: {fileID: 0}
     - target: {fileID: 224156255112743794, guid: 6954a9cdfd1484b75ab9a6500266422a,
         type: 2}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224156255112743794, guid: 6954a9cdfd1484b75ab9a6500266422a,
         type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224156255112743794, guid: 6954a9cdfd1484b75ab9a6500266422a,
         type: 2}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: -12
       objectReference: {fileID: 0}
     - target: {fileID: 224329026576665020, guid: 6954a9cdfd1484b75ab9a6500266422a,
         type: 2}
       propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1468161162971492, guid: 6954a9cdfd1484b75ab9a6500266422a, type: 2}
+      propertyPath: m_Name
+      value: Info
+      objectReference: {fileID: 0}
+    - target: {fileID: 224329026576665020, guid: 6954a9cdfd1484b75ab9a6500266422a,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.000012381071
+      objectReference: {fileID: 0}
+    - target: {fileID: 224871699992241232, guid: 6954a9cdfd1484b75ab9a6500266422a,
+        type: 2}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1468161162971492, guid: 6954a9cdfd1484b75ab9a6500266422a, type: 2}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -627,7 +645,7 @@ GameObject:
   m_Component:
   - component: {fileID: 570906518}
   m_Layer: 5
-  m_Name: Textfield
+  m_Name: TextfieldObj
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1755,11 +1773,11 @@ Prefab:
     - target: {fileID: 224128250296704372, guid: c74b0aac69d814ec9a0c752f071cfc34,
         type: 2}
       propertyPath: m_SizeDelta.x
-      value: 10
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1992899094733406, guid: c74b0aac69d814ec9a0c752f071cfc34, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224223518691760016, guid: c74b0aac69d814ec9a0c752f071cfc34,
         type: 2}
@@ -2033,6 +2051,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1907382863}
+  - component: {fileID: 1907382864}
   m_Layer: 5
   m_Name: TextfieldOverlay
   m_TagString: Untagged
@@ -2060,6 +2079,22 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1907382864
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1907382862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35f69cde6f33447318163c396df42896, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  titleText: {fileID: 2113324708}
+  textfield: {fileID: 635072535}
+  placeholderText: {fileID: 214195083}
+  menuItemName: 
+  currentText: 
 --- !u!224 &1920220589 stripped
 RectTransform:
   m_PrefabParentObject: {fileID: 224822104036941524, guid: 6954a9cdfd1484b75ab9a6500266422a,
@@ -2401,7 +2436,7 @@ MonoBehaviour:
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
+    m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: Company Name
 --- !u!222 &2113324711

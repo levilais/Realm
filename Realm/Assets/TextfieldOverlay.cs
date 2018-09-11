@@ -3,48 +3,65 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class TextfieldOverlay : MonoBehaviour {
-    
+public class TextfieldOverlay : MonoBehaviour
+{
+
     public GameObject viewManager;
+    GameObject textfieldOverlay;
+    InputField inputField;
+
+    string textfieldObjectName;
     bool contentIsAdjustedForKeyboard = false;
 
     private void Start()
     {
+        InitializeObjects();
+        textfieldObjectName = transform.parent.name;
+    }
+
+    private void InitializeObjects()
+    {
+        textfieldOverlay = transform.GetComponentInParent<MenuManager>().TextfieldOverlay.gameObject;
+        inputField = transform.GetComponent<InputField>();
         viewManager = transform.GetComponentInParent<MenuManager>().gameObject;
     }
 
     void Update()
     {
-        InputField inputField = transform.GetComponentInParent<InputField>();
-        // MOBILE
-        TouchScreenKeyboard keyboard = inputField.touchScreenKeyboard;
-        if (inputField.touchScreenKeyboard.status == TouchScreenKeyboard.Status.Visible && !contentIsAdjustedForKeyboard) {
-            ShowOverlay();
-        }
-        //if (inputField.touchScreenKeyboard.status != TouchScreenKeyboard.Status.Visible && contentIsAdjustedForKeyboard)
-        //{
-        //    HideOverlay();
-        //}
-
         // EDITOR
+#if UNITY_EDITOR
         if (inputField.isFocused && !contentIsAdjustedForKeyboard)
         {
+            UpdateText();
             ShowOverlay();
         }
-        //if (!inputField.isFocused && contentIsAdjustedForKeyboard)
-        //{
-        //    HideOverlay();
-        //}
+        if (!inputField.enabled && contentIsAdjustedForKeyboard)
+        {
+            HideOverlay();
+        }
+
+        // MOBILE
+#else
+        TouchScreenKeyboard keyboard = inputField.touchScreenKeyboard;
+        if (inputField.touchScreenKeyboard.status == TouchScreenKeyboard.Status.Visible && !contentIsAdjustedForKeyboard) {
+            UpdateText();    
+            ShowOverlay();
+        }
+#endif
+    }
+
+    public void UpdateText() {
+        TextfieldOverlayInitializer textfieldOverlayInitializer = textfieldOverlay.GetComponent<TextfieldOverlayInitializer>();
+        textfieldOverlayInitializer.currentText = inputField.text;
     }
 
     public void ShowOverlay() {
-        GameObject textfieldOverlay = transform.GetComponentInParent<MenuManager>().TextfieldOverlay.gameObject;
+        textfieldOverlay.GetComponent<TextfieldOverlayInitializer>().menuItemName = textfieldObjectName;
         textfieldOverlay.SetActive(true);
         contentIsAdjustedForKeyboard = true;
     }
 
     public void HideOverlay() {
-        GameObject textfieldOverlay = transform.GetComponentInParent<MenuManager>().TextfieldOverlay.gameObject;
         textfieldOverlay.SetActive(false);
         contentIsAdjustedForKeyboard = false;
     }
