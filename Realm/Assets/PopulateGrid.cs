@@ -8,8 +8,6 @@ public class PopulateGrid : MonoBehaviour
     public GameObject textfieldMenuItemPF; // This is our prefab object that will be exposed in the inspector
     public GameObject inputScrollView;
 
-    public int numberToCreate; // number of objects to create. Exposed in inspector
-
     void Start()
     {
         Populate();
@@ -24,6 +22,9 @@ public class PopulateGrid : MonoBehaviour
         {
             newTextfieldMenuItemObj = (GameObject)Instantiate(textfieldMenuItemPF, transform);
             newTextfieldMenuItemObj.name = menuObject.textfields[i].ToString().Replace("_"," ");
+
+            GameObject viewManagerObj = transform.GetComponentInParent<MenuManager>().gameObject;
+            newTextfieldMenuItemObj.GetComponent<TextfieldMenuItem>().viewManager = viewManagerObj;
         }
     }
 

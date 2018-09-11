@@ -6,23 +6,46 @@ using UnityEngine.UI;
 public class TextfieldOverlay : MonoBehaviour {
     
     public GameObject viewManager;
-    private GameObject textfieldOverlay;
+    bool contentIsAdjustedForKeyboard = false;
 
-    void Start()
+    private void Start()
     {
-        MenuManager menuManager = viewManager.GetComponent<MenuManager>();
-        textfieldOverlay = menuManager.TextfieldSelectedOverlay;
+        viewManager = transform.GetComponentInParent<MenuManager>().gameObject;
     }
 
     void Update()
     {
-        //If the input field is focused, change its color to green.
-        if (transform.GetComponent<InputField>().isFocused == true)
+        InputField inputField = transform.GetComponentInParent<InputField>();
+        // MOBILE
+        TouchScreenKeyboard keyboard = inputField.touchScreenKeyboard;
+        if (inputField.touchScreenKeyboard.status == TouchScreenKeyboard.Status.Visible && !contentIsAdjustedForKeyboard) {
+            ShowOverlay();
+        }
+        //if (inputField.touchScreenKeyboard.status != TouchScreenKeyboard.Status.Visible && contentIsAdjustedForKeyboard)
+        //{
+        //    HideOverlay();
+        //}
+
+        // EDITOR
+        if (inputField.isFocused && !contentIsAdjustedForKeyboard)
         {
-            textfieldOverlay.SetActive(true);
+            ShowOverlay();
         }
-        else {
-            textfieldOverlay.SetActive(false);
-        }
+        //if (!inputField.isFocused && contentIsAdjustedForKeyboard)
+        //{
+        //    HideOverlay();
+        //}
+    }
+
+    public void ShowOverlay() {
+        GameObject textfieldOverlay = transform.GetComponentInParent<MenuManager>().TextfieldOverlay.gameObject;
+        textfieldOverlay.SetActive(true);
+        contentIsAdjustedForKeyboard = true;
+    }
+
+    public void HideOverlay() {
+        GameObject textfieldOverlay = transform.GetComponentInParent<MenuManager>().TextfieldOverlay.gameObject;
+        textfieldOverlay.SetActive(false);
+        contentIsAdjustedForKeyboard = false;
     }
 }

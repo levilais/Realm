@@ -12,9 +12,12 @@ public class MenuManager : MonoBehaviour {
     public List<GameObject> menus;
     public List<GameObject> navigationHistory;
 
-    [Header("Prefabs & Connections")]
+    [Header("Connections")]
     public GameObject AlertPF;
-    public GameObject TextfieldSelectedOverlay;
+
+    [Space(6)]
+    [Header("Object Access")]
+    public GameObject TextfieldOverlay;
 
     //Awake is always called before any Start functions
     private void Awake()
