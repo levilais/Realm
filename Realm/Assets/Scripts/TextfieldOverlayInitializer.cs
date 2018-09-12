@@ -17,11 +17,13 @@ public class TextfieldOverlayInitializer : MonoBehaviour
         titleText.GetComponent<Text>().text = menuItemName;
         textfield.GetComponent<InputField>().text = currentText;
         placeholderText.GetComponent<Text>().text = "Enter " + menuItemName + "...";
+        GetComponentInParent<Canvas>().sortingOrder = 2;
     }
 
     private void OnDisable()
     {
         currentText = "";
+        GetComponentInParent<Canvas>().sortingOrder = 0;
     }
 
     private void Update()

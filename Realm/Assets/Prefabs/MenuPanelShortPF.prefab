@@ -145,20 +145,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00194dd17f7b74c95bbf782f60091715, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  menuName: Main Menu
-  menuButtonPrefab: {fileID: 1348476042403918, guid: 75df25727a496485caca4a3dbf3671b5,
-    type: 2}
-  leftButton: {fileID: 0}
-  middleButtons: {fileID: 0}
-  middleButtonsContentObject: {fileID: 0}
-  rightButton: {fileID: 0}
-  headerIcon: {fileID: 0}
-  headerTitle: {fileID: 1187897571464632}
-  backButtonExists: 0
-  nextButtonExists: 0
-  isNavigationOnly: 1
-  navigationHistory: []
-  subMenuItems: []
 --- !u!114 &114183317362303320
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -400,7 +386,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1772847789888812}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
@@ -433,12 +419,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menuManager: {fileID: 0}
-  menuPanel: {fileID: 0}
-  menuPanelShort: {fileID: 0}
-  menuPanelTall: {fileID: 0}
   menuName: 0
   menuDisplayType: 0
   menuUseType: 0
+  subMenuItems: 
+  nextButtonExists: 0
+  nextButtonCustomTitle: 
+  backButtonExists: 0
+  headerIcon: {fileID: 0}
+  headerTitle: {fileID: 0}
+  exitButton: {fileID: 0}
+  leftButton: {fileID: 0}
+  middleButtons: {fileID: 0}
+  rightButton: {fileID: 0}
+  leftButtonShort: {fileID: 0}
+  leftButtonTitle: {fileID: 0}
+  rightButtonShort: {fileID: 0}
+  rightButtonTitle: {fileID: 0}
+  messageText: {fileID: 0}
+  headerMessageText: {fileID: 0}
+  inputScrollView: {fileID: 0}
+  textfields: 
+  MenuButtonPF: {fileID: 0}
 --- !u!114 &114951818401910372
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -91,6 +91,11 @@ public class MenuObject : MonoBehaviour {
         InstantiateMenuObject();
     }
 
+    private void OnEnable()
+    {
+        transform.GetComponentInParent<MenuManager>().ToggleMenuPanelBackground(transform);
+    }
+
     public void InstantiateMenuObject() {
         rightButton.SetActive(nextButtonExists);
         PopulateButtons();

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MenuManager : MonoBehaviour {
 
@@ -18,6 +19,9 @@ public class MenuManager : MonoBehaviour {
     [Space(6)]
     [Header("Object Access")]
     public GameObject TextfieldOverlay;
+    public GameObject MenuPanelObj;
+    public GameObject MenuPanelShortObj;
+    public GameObject MenuPanelTallObj;
 
     //Awake is always called before any Start functions
     private void Awake()
@@ -64,9 +68,11 @@ public class MenuManager : MonoBehaviour {
             existingMenus.Add(menuObject.name);
             if (menuObject.name == targetMenu)
             {
-                //navigationHistory.Add(menuObject.gameObject);
+                //ToggleMenuPanelBackground(menuObject);
+
                 menuObject.gameObject.SetActive(true);
-                if (toMenu != "Back" && toMenu != "Next") {
+                if (toMenu != "Back" && toMenu != "Next")
+                {
                     navigationHistory.Add(fromMenu);
                 }
             }
@@ -77,6 +83,32 @@ public class MenuManager : MonoBehaviour {
         } else
         {
             PresentAlert("Oops!", "This option hasn't finished being created yet.  Check back later.", "OK");
+        }
+    }
+
+    public void ToggleMenuPanelBackground(Transform menuObject)
+    {
+        string menuDisplayTypeAsString = menuObject.GetComponent<MenuObject>().menuDisplayType.ToString();
+        switch (menuDisplayTypeAsString)
+        {
+            case "MenuPanel":
+                MenuPanelObj.SetActive(true);
+                MenuPanelTallObj.SetActive(false);
+                MenuPanelShortObj.SetActive(false);
+                break;
+            case "MenuPanelTall":
+                MenuPanelObj.SetActive(false);
+                MenuPanelTallObj.SetActive(true);
+                MenuPanelShortObj.SetActive(false);
+                break;
+            case "MenuPanelShort":
+                MenuPanelObj.SetActive(false);
+                MenuPanelTallObj.SetActive(false);
+                MenuPanelShortObj.SetActive(true);
+                break;
+            default:
+                Debug.Log("Error finding panel type");
+                break;
         }
     }
 

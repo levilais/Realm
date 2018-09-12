@@ -309,7 +309,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1990666886417328
 GameObject:
   m_ObjectHideFlags: 1
@@ -419,7 +419,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 114825782398980644}
   m_HandleRect: {fileID: 224871699992241232}
   m_Direction: 2
-  m_Value: 0
+  m_Value: 0.9999996
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -626,7 +626,6 @@ MonoBehaviour:
   textfieldMenuItemPF: {fileID: 1463764480839768, guid: 79a4001e5892741048bc5fb54845ea58,
     type: 2}
   inputScrollView: {fileID: 1338099478772376}
-  numberToCreate: 4
 --- !u!114 &114299504666224872
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -801,7 +800,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1468161162971492}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
