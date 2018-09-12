@@ -114,8 +114,9 @@ public class MenuManager : MonoBehaviour {
 
     public void PresentAlert(string title, string message, string buttonTitle)
     {
-        GameObject newAlert = (GameObject)Instantiate(AlertPF, transform);
+        GameObject canvasObj = transform.GetComponentInParent<Canvas>().gameObject;
+        GameObject newAlert = (GameObject)Instantiate(AlertPF, canvasObj.transform);
         Alert alert = newAlert.GetComponent<Alert>();
-        alert.PresentAlertMessage(gameObject, title, message, buttonTitle);
+        alert.PresentAlertMessage(canvasObj, title, message, buttonTitle);
     }
 }
