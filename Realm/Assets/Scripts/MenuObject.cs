@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class MenuObject : MonoBehaviour {
 
     [Header("Object Info")]
-    public GameObject menuManager;
+    public GameObject viewManager;
     public MenuName menuName;
     public MenuDisplayType menuDisplayType;
     public MenuUseType menuUseType;
@@ -151,46 +151,50 @@ public class MenuObject : MonoBehaviour {
 
     void PopulateButtons()
     {
-        //NavigationManager navigationManager = new NavigationManager();
-        //subMenuItems = navigationManager.SubMenuItmesForMenuNamed(menuName.ToString());
-        if (subMenuItems.Contains(MenuName.Back))
+        if (menuDisplayType != MenuDisplayType.MenuPanelShort)
         {
-            backButtonExists = true;
-        }
+            if (subMenuItems.Contains(MenuName.Back))
+            {
+                backButtonExists = true;
+            }
 
-        if (subMenuItems.Contains(MenuName.Next))
-        {
-            rightButton.SetActive(true);
-            rightButtonExists = true;
-        }
-        else
-        {
-            rightButton.SetActive(false);
-            rightButtonExists = false;
+            if (subMenuItems.Contains(MenuName.Next))
+            {
+                rightButton.SetActive(true);
+                rightButtonExists = true;
+            }
+            else
+            {
+                rightButton.SetActive(false);
+                rightButtonExists = false;
+                //rightButton.name = "Next";
+            }
 
-            rightButton.name = "Next";
+            // We start at index 1 because the left button is first in list and separate
+            int timesThrough = subMenuItems.Count;
+            if (rightButtonExists)
+            {
+                timesThrough -= 1;
+            }
+
+            for (int i = 1; i < timesThrough; i++)
+            {
+                // Create new instances of our prefab until we've created as many as we specified
+                GameObject newMenuButton = (GameObject)Instantiate(MenuButtonPF, transform);
+                MenuButtonObjectInitializer menuButtons = new MenuButtonObjectInitializer(newMenuButton, subMenuItems[i].ToString());
+                newMenuButton.transform.parent = transform.GetComponentInChildren<GridLayoutGroup>().transform;
+                newMenuButton.name = subMenuItems[i].ToString();
+                newMenuButton.GetComponent<MenuButton>().menuPanelObject = gameObject;
+            }
+        } else {
+            string menuButtonName = subMenuItems[1].ToString();
+            MenuButtonObjectInitializer rightMenuButton = new MenuButtonObjectInitializer(rightButton, menuButtonName);
+            rightButton.name = menuButtonName;
         }
 
         //leftButton.transform.GetComponent<Button>().image.sprite = Resources.Load<Sprite>("Images/" + menuName.ToString());
-            MenuButtonObjectInitializer menuButton = new MenuButtonObjectInitializer(leftButton, subMenuItems[0].ToString());
-
-        // We start at index 1 because the left button is first in list and separate
-        GameObject newMenuButton; // Create GameObject instance
-        int timesThrough = subMenuItems.Count;
-        if (rightButtonExists)
-        {
-            timesThrough -= 1;
-        }
-
-        for (int i = 1; i < timesThrough; i++)
-        {
-            // Create new instances of our prefab until we've created as many as we specified
-            newMenuButton = (GameObject)Instantiate(MenuButtonPF, transform);
-            MenuButtonObjectInitializer menuButtons = new MenuButtonObjectInitializer(newMenuButton, subMenuItems[i].ToString());
-            newMenuButton.transform.parent = transform.GetComponentInChildren<GridLayoutGroup>().transform;
-            newMenuButton.name = subMenuItems[i].ToString();
-            newMenuButton.GetComponent<MenuButton>().menuPanelObject = gameObject;
-        }
-            leftButton.name = subMenuItems[0].ToString();
+        MenuButtonObjectInitializer menuButton = new MenuButtonObjectInitializer(leftButton, subMenuItems[0].ToString());
+        leftButton.name = subMenuItems[0].ToString();
+        //leftButton.name = subMenuItems[0].ToString();
     }
 }
