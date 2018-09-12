@@ -26,13 +26,11 @@ public class MenuObject : MonoBehaviour {
     public GameObject leftButton;
     public GameObject middleButtons;
     public GameObject rightButton;
+
     [Space(2)]
     [Header("Short Panel Objects")]
-    public GameObject leftButtonShort;
-    public GameObject leftButtonTitle;
-    public GameObject rightButtonShort;
-    public GameObject rightButtonTitle;
     public GameObject messageText;
+
     [Space(2)]
     [Header("Tall Panel Objects")]
     public GameObject headerMessageText;
