@@ -157,7 +157,6 @@ public class MenuObject : MonoBehaviour {
             {
                 backButtonExists = true;
             }
-
             if (subMenuItems.Contains(MenuName.Next))
             {
                 rightButton.SetActive(true);
@@ -167,9 +166,7 @@ public class MenuObject : MonoBehaviour {
             {
                 rightButton.SetActive(false);
                 rightButtonExists = false;
-                //rightButton.name = "Next";
             }
-
             // We start at index 1 because the left button is first in list and separate
             int timesThrough = subMenuItems.Count;
             if (rightButtonExists)
@@ -191,10 +188,7 @@ public class MenuObject : MonoBehaviour {
             MenuButtonObjectInitializer rightMenuButton = new MenuButtonObjectInitializer(rightButton, menuButtonName);
             rightButton.name = menuButtonName;
         }
-
-        //leftButton.transform.GetComponent<Button>().image.sprite = Resources.Load<Sprite>("Images/" + menuName.ToString());
         MenuButtonObjectInitializer menuButton = new MenuButtonObjectInitializer(leftButton, subMenuItems[0].ToString());
         leftButton.name = subMenuItems[0].ToString();
-        //leftButton.name = subMenuItems[0].ToString();
     }
 }
