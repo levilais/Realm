@@ -12,8 +12,7 @@ public class MenuObject : MonoBehaviour {
     public MenuDisplayType menuDisplayType;
     public MenuUseType menuUseType;
     public List<MenuName> subMenuItems;
-    public bool nextButtonExists;
-    public string nextButtonCustomTitle;
+    public bool rightButtonExists;
     public bool backButtonExists;
 
     [Space(6)]
@@ -45,6 +44,8 @@ public class MenuObject : MonoBehaviour {
     public GameObject MenuButtonPF;
 
     public enum MenuName { 
+        Welcome,
+        Enter,
         Menu, 
         Profile, 
         Displays, 
@@ -97,7 +98,7 @@ public class MenuObject : MonoBehaviour {
     }
 
     public void InstantiateMenuObject() {
-        rightButton.SetActive(nextButtonExists);
+        rightButton.SetActive(rightButtonExists);
         PopulateButtons();
         PopulateHeader();
         SetScrollviewProperties();
@@ -160,12 +161,12 @@ public class MenuObject : MonoBehaviour {
         if (subMenuItems.Contains(MenuName.Next))
         {
             rightButton.SetActive(true);
-            nextButtonExists = true;
+            rightButtonExists = true;
         }
         else
         {
             rightButton.SetActive(false);
-            nextButtonExists = false;
+            rightButtonExists = false;
 
             rightButton.name = "Next";
         }
@@ -176,7 +177,7 @@ public class MenuObject : MonoBehaviour {
         // We start at index 1 because the left button is first in list and separate
         GameObject newMenuButton; // Create GameObject instance
         int timesThrough = subMenuItems.Count;
-        if (nextButtonExists)
+        if (rightButtonExists)
         {
             timesThrough -= 1;
         }
