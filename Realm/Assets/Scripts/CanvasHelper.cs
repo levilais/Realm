@@ -10,6 +10,7 @@ public class CanvasHelper : MonoBehaviour
     public GameObject MenuPanelObj;
     public GameObject MenuPanelTallObj;
     public GameObject MenuPanelShortObj;
+    public GameObject SafeAreaView;
 
     public static UnityEvent onOrientationChange = new UnityEvent();
     public static UnityEvent onResolutionChange = new UnityEvent();
@@ -43,7 +44,11 @@ public class CanvasHelper : MonoBehaviour
         UpdateReferenceResolution();
         UpdateCanvasCamera();
 
-        safeAreaTransform = transform.Find("SafeArea") as RectTransform;
+        //MY CODE
+        safeAreaTransform = SafeAreaView.transform as RectTransform;
+
+        //OLD CODE
+        //safeAreaTransform = transform.Find("SafeArea") as RectTransform;
 
         if (!screenChangeVarsInitialized)
         {
