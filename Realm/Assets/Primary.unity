@@ -786,6 +786,11 @@ Prefab:
       propertyPath: viewManager
       value: 
       objectReference: {fileID: 1857640435}
+    - target: {fileID: 114960726303343858, guid: 6954a9cdfd1484b75ab9a6500266422a,
+        type: 2}
+      propertyPath: leftButtonExists
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6954a9cdfd1484b75ab9a6500266422a, type: 2}
   m_IsPrefabParent: 0
@@ -1612,6 +1617,16 @@ Prefab:
       propertyPath: viewManager
       value: 
       objectReference: {fileID: 1857640435}
+    - target: {fileID: 114078931295821356, guid: c74b0aac69d814ec9a0c752f071cfc34,
+        type: 2}
+      propertyPath: leftButtonExists
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114078931295821356, guid: c74b0aac69d814ec9a0c752f071cfc34,
+        type: 2}
+      propertyPath: rightButtonExists
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c74b0aac69d814ec9a0c752f071cfc34, type: 2}
   m_IsPrefabParent: 0
@@ -2131,6 +2146,11 @@ Prefab:
       propertyPath: viewManager
       value: 
       objectReference: {fileID: 1857640435}
+    - target: {fileID: 114078931295821356, guid: c74b0aac69d814ec9a0c752f071cfc34,
+        type: 2}
+      propertyPath: leftButtonExists
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c74b0aac69d814ec9a0c752f071cfc34, type: 2}
   m_IsPrefabParent: 0
@@ -2339,6 +2359,16 @@ Prefab:
       propertyPath: viewManager
       value: 
       objectReference: {fileID: 1857640435}
+    - target: {fileID: 114078931295821356, guid: c74b0aac69d814ec9a0c752f071cfc34,
+        type: 2}
+      propertyPath: rightButtonExists
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114078931295821356, guid: c74b0aac69d814ec9a0c752f071cfc34,
+        type: 2}
+      propertyPath: leftButtonExists
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c74b0aac69d814ec9a0c752f071cfc34, type: 2}
   m_IsPrefabParent: 0
@@ -2733,6 +2763,11 @@ Prefab:
     - target: {fileID: 1556828591134974, guid: 5f154d1e48a6644cb85dc783c768be38, type: 2}
       propertyPath: m_Name
       value: Welcome
+      objectReference: {fileID: 0}
+    - target: {fileID: 114863273118564482, guid: 5f154d1e48a6644cb85dc783c768be38,
+        type: 2}
+      propertyPath: leftButtonExists
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5f154d1e48a6644cb85dc783c768be38, type: 2}
