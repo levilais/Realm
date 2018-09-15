@@ -54,7 +54,8 @@ public class MenuObject : MonoBehaviour {
         Edit,
         Wayposts,
         Anchor,
-        Next
+        Next,
+        BEGIN
     };
 
     public enum MenuDisplayType {
