@@ -9,7 +9,7 @@ public class MenuButton : MonoBehaviour
 
     public void NavigateToMenuClicked()
     {
-        MenuManager.menuManager.performSegue(transform.name, menuPanelObject);
+        ViewManager.menuManager.performSegue(transform.name, menuPanelObject);
     }
 
 

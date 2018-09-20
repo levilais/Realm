@@ -21,9 +21,9 @@ public class TextfieldOverlay : MonoBehaviour
 
     private void InitializeObjects()
     {
-        textfieldOverlay = transform.GetComponentInParent<MenuManager>().TextfieldOverlay.gameObject;
+        textfieldOverlay = transform.GetComponentInParent<ViewManager>().TextfieldOverlay.gameObject;
         inputField = transform.GetComponent<InputField>();
-        viewManager = transform.GetComponentInParent<MenuManager>().gameObject;
+        viewManager = transform.GetComponentInParent<ViewManager>().gameObject;
     }
 
     void Update()

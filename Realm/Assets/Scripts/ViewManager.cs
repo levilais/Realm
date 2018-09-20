@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class MenuManager : MonoBehaviour {
+public class ViewManager : MonoBehaviour {
 
     [Header("Instance Declaration")]
-    public static MenuManager menuManager = null;
+    public static ViewManager menuManager = null;
 
     [Space(6)]
     [Header("Singleton Properties (Runtime)")]
@@ -88,7 +88,7 @@ public class MenuManager : MonoBehaviour {
 
     public void ToggleMenuPanelBackground(Transform menuObject)
     {
-        string menuDisplayTypeAsString = menuObject.GetComponent<MenuObject>().menuDisplayType.ToString();
+        string menuDisplayTypeAsString = menuObject.GetComponent<ViewController>().menuDisplayType.ToString();
         switch (menuDisplayTypeAsString)
         {
             case "MenuPanel":

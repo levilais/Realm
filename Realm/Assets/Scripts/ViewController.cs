@@ -4,14 +4,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class MenuObject : MonoBehaviour {
+public class ViewController : MonoBehaviour {
 
     [Header("Object Info")]
     public GameObject viewManager;
-    public MenuName menuName;
-    public MenuDisplayType menuDisplayType;
-    public MenuUseType menuUseType;
-    public List<MenuName> subMenuItems;
+    public ViewName menuName;
+    public ViewMenuType menuDisplayType;
+    public ViewType menuUseType;
+    public List<ViewName> subMenuItems;
     public bool rightButtonExists;
     //public bool backButtonExists;
     public bool leftButtonExists;
@@ -42,7 +42,7 @@ public class MenuObject : MonoBehaviour {
     [Header("Prefabs")]
     public GameObject MenuButtonPF;
 
-    public enum MenuName { 
+    public enum ViewName { 
         Welcome,
         Enter,
         Menu, 
@@ -58,14 +58,14 @@ public class MenuObject : MonoBehaviour {
         BEGIN
     };
 
-    public enum MenuDisplayType {
+    public enum ViewMenuType {
         MenuPanel,
         MenuPanelShort,
         MenuPanelTall
     }
 
 
-    public enum MenuUseType {
+    public enum ViewType {
         Navigation,
         Input,
         Tool
@@ -94,7 +94,7 @@ public class MenuObject : MonoBehaviour {
 
     private void OnEnable()
     {
-        transform.GetComponentInParent<MenuManager>().ToggleMenuPanelBackground(transform);
+        transform.GetComponentInParent<ViewManager>().ToggleMenuPanelBackground(transform);
     }
 
     public void InstantiateMenuObject() {
@@ -116,11 +116,11 @@ public class MenuObject : MonoBehaviour {
         int scrollWidth = (int)middleButtons.GetComponent<RectTransform>().rect.width;
 
         float newMaxAdjustment = 0;
-        if (subMenuItems.Contains(MenuName.Next) && scrollWidth != canvasWidth)
+        if (subMenuItems.Contains(ViewName.Next) && scrollWidth != canvasWidth)
         {
             newMaxAdjustment = -100;
         }
-        else if (!subMenuItems.Contains(MenuName.Next) && scrollWidth == canvasWidth)
+        else if (!subMenuItems.Contains(ViewName.Next) && scrollWidth == canvasWidth)
         {
             newMaxAdjustment = 100;
         }

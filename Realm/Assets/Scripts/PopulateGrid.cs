@@ -16,14 +16,14 @@ public class PopulateGrid : MonoBehaviour
 
     void Populate()
     {
-        MenuObject menuObject = transform.GetComponentInParent<MenuObject>();
+        ViewController menuObject = transform.GetComponentInParent<ViewController>();
         GameObject newTextfieldMenuItemObj; // Create GameObject instance
         for (int i = 0; i < menuObject.textfields.Count; i++)
         {
             newTextfieldMenuItemObj = (GameObject)Instantiate(textfieldMenuItemPF, transform);
             newTextfieldMenuItemObj.name = menuObject.textfields[i].ToString().Replace("_"," ");
 
-            GameObject viewManagerObj = transform.GetComponentInParent<MenuManager>().gameObject;
+            GameObject viewManagerObj = transform.GetComponentInParent<ViewManager>().gameObject;
             newTextfieldMenuItemObj.GetComponent<TextfieldMenuItem>().viewManager = viewManagerObj;
         }
     }
