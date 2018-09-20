@@ -46,16 +46,33 @@ public class ViewManager : MonoBehaviour {
 
     public void performSegue(string toMenu, GameObject fromMenu) {
         
+        List<string> skipAddingToNavigationHistory = new List<string>();
+
         string targetMenu;
         switch (toMenu) {
             case "Back":
                 targetMenu = navigationHistory[navigationHistory.Count - 1].name;
                 navigationHistory.RemoveAt(navigationHistory.Count - 1);
+                skipAddingToNavigationHistory.Add(targetMenu);
                 break;
             case "Next":
                 // todo: Segue to next menu item in sequence... for now do nothing.
                 PresentAlert("Oops!", "This option hasn't finished being created yet.  Check back later.", "OK");
                 targetMenu = toMenu;
+                skipAddingToNavigationHistory.Add(targetMenu);
+                break;
+            case "BEGIN":
+                if (RealmManager.realmManager.anchorExists) {
+                    targetMenu = "BEGIN";
+                } else {
+                    targetMenu = "Anchor";
+                }
+                skipAddingToNavigationHistory.Add(targetMenu);
+                break;
+            case "Exit":
+                navigationHistory.Clear();
+                targetMenu = "Welcome";
+                skipAddingToNavigationHistory.Add(targetMenu);
                 break;
             default:
                 targetMenu = toMenu;
@@ -69,10 +86,9 @@ public class ViewManager : MonoBehaviour {
             if (menuObject.name == targetMenu)
             {
                 //ToggleMenuPanelBackground(menuObject);
-
                 menuObject.gameObject.SetActive(true);
-                if (toMenu != "Back" && toMenu != "Next")
-                {
+
+                if (!skipAddingToNavigationHistory.Contains(targetMenu)) {
                     navigationHistory.Add(fromMenu);
                 }
             }

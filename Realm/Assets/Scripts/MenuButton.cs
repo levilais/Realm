@@ -11,6 +11,4 @@ public class MenuButton : MonoBehaviour
     {
         ViewManager.menuManager.performSegue(transform.name, menuPanelObject);
     }
-
-
 }

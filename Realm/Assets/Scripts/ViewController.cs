@@ -13,7 +13,6 @@ public class ViewController : MonoBehaviour {
     public ViewType menuUseType;
     public List<ViewName> subMenuItems;
     public bool rightButtonExists;
-    //public bool backButtonExists;
     public bool leftButtonExists;
 
     [Space(6)]
@@ -55,7 +54,8 @@ public class ViewController : MonoBehaviour {
         Wayposts,
         Anchor,
         Next,
-        BEGIN
+        BEGIN,
+        Exit
     };
 
     public enum ViewMenuType {
@@ -155,8 +155,9 @@ public class ViewController : MonoBehaviour {
         int timesThrough = subMenuItems.Count;
 
         if (leftButtonExists) {
-            MenuButtonObjectInitializer menuButton = new MenuButtonObjectInitializer(leftButton, subMenuItems[0].ToString());
-            leftButton.name = subMenuItems[0].ToString();
+            string menuButtonName = subMenuItems[0].ToString();
+            MenuButtonObjectInitializer menuButton = new MenuButtonObjectInitializer(leftButton, menuButtonName);
+            leftButton.name = menuButtonName;
             leftButton.SetActive(true);
             i += 1;
         } else {
