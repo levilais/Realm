@@ -6,11 +6,11 @@ using UnityEngine.UI;
 public class ViewManager : MonoBehaviour {
 
     [Header("Instance Declaration")]
-    public static ViewManager menuManager = null;
+    public static ViewManager viewManager = null;
 
     [Space(6)]
     [Header("Singleton Properties (Runtime)")]
-    public List<GameObject> menus;
+    public List<GameObject> views;
     public List<GameObject> navigationHistory;
 
     [Header("Connections")]
@@ -27,11 +27,11 @@ public class ViewManager : MonoBehaviour {
     private void Awake()
     {
         //Check if instance already exists
-        if (menuManager == null)
+        if (viewManager == null)
             //if not, set instance to this
-            menuManager = this;
+            viewManager = this;
         //If instance already exists and it's not this:
-        else if (menuManager != this)
+        else if (viewManager != this)
             //Then destroy this. This enforces our singleton pattern, meaning there can only ever be one instance of a MenuManager.
             Destroy(gameObject);
         
@@ -40,26 +40,31 @@ public class ViewManager : MonoBehaviour {
 
         // Add menu 
         foreach (GameObject menuObject in gameObject.transform) {
-            menuManager.menus.Add(menuObject);
+            viewManager.views.Add(menuObject);
         }
     }
 
     public void performSegue(string toMenu, GameObject fromMenu) {
-        
-        List<string> skipAddingToNavigationHistory = new List<string>();
+
+        bool skipAddingToNavHistory = false;
+
+        if (fromMenu.name == "Anchor")
+        {
+            skipAddingToNavHistory = true;
+        }
 
         string targetMenu;
         switch (toMenu) {
             case "Back":
                 targetMenu = navigationHistory[navigationHistory.Count - 1].name;
                 navigationHistory.RemoveAt(navigationHistory.Count - 1);
-                skipAddingToNavigationHistory.Add(targetMenu);
+                skipAddingToNavHistory = true;
                 break;
             case "Next":
                 // todo: Segue to next menu item in sequence... for now do nothing.
                 PresentAlert("Oops!", "This option hasn't finished being created yet.  Check back later.", "OK");
                 targetMenu = toMenu;
-                skipAddingToNavigationHistory.Add(targetMenu);
+                skipAddingToNavHistory = true;
                 break;
             case "BEGIN":
                 if (RealmManager.realmManager.anchorExists) {
@@ -67,12 +72,17 @@ public class ViewManager : MonoBehaviour {
                 } else {
                     targetMenu = "Anchor";
                 }
-                skipAddingToNavigationHistory.Add(targetMenu);
+                skipAddingToNavHistory = true;
                 break;
             case "Exit":
                 navigationHistory.Clear();
-                targetMenu = "Welcome";
-                skipAddingToNavigationHistory.Add(targetMenu);
+                if (!RealmManager.realmManager.anchorExists) {
+                    targetMenu = "Welcome";
+                } else {
+                    targetMenu = "BEGIN";
+                }
+
+                skipAddingToNavHistory = true;
                 break;
             default:
                 targetMenu = toMenu;
@@ -80,15 +90,14 @@ public class ViewManager : MonoBehaviour {
         }
 
         List<string> existingMenus = new List<string>();
-        foreach (Transform menuObject in menuManager.transform)
+        foreach (Transform menuObject in viewManager.transform)
         {
             existingMenus.Add(menuObject.name);
             if (menuObject.name == targetMenu)
             {
                 //ToggleMenuPanelBackground(menuObject);
                 menuObject.gameObject.SetActive(true);
-
-                if (!skipAddingToNavigationHistory.Contains(targetMenu)) {
+                if (!skipAddingToNavHistory) {
                     navigationHistory.Add(fromMenu);
                 }
             }
