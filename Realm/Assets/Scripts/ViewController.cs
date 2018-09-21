@@ -56,7 +56,8 @@ public class ViewController : MonoBehaviour {
         Next,
         BEGIN,
         Exit,
-        Realm
+        Realm,
+        PlacementView
     };
 
     public enum ViewMenuType {

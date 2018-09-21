@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class WaypostsView : MonoBehaviour {
+public class PlacementView : MonoBehaviour {
 
     private GameObject messageTextObj;
     private Text messageText;
@@ -31,15 +31,15 @@ public class WaypostsView : MonoBehaviour {
                 break;
             case 1:
                 // This will appear for 2 seconds (maybe 3) when Anchor is found
-                messageText.text = "Your Anchor has been set.";
+                messageText.text = "You are now connected to your Anchor.";
                 stepInProcess += 1;
                 break;
             case 2:
-                messageText.text = "Step 2: Scan “Waypost” image 1/1";
+                messageText.text = "Step 2: Scan “Waypost [Insert Name]” image";
                 stepInProcess += 1;
                 break;
             case 3:
-                messageText.text = "Your Waypost has been set.";
+                messageText.text = "Waypost [Insert Name] has been set.";
                 stepInProcess += 1;
                 break;
             case 4:

@@ -76,14 +76,12 @@ public class ViewManager : MonoBehaviour {
                 skipAddingToNavHistory = true;
                 break;
             case "Exit":
-                navigationHistory.Clear();
-                if (!RealmManager.realmManager.anchorExists) {
-                    targetMenu = "Welcome";
-                } else {
-                    targetMenu = "BEGIN";
-                }
-
+                targetMenu = navigationHistory[navigationHistory.Count - 1].name;
+                navigationHistory.RemoveAt(navigationHistory.Count - 1);
                 skipAddingToNavHistory = true;
+                break;
+            case "New":
+                targetMenu = "PlacementView";
                 break;
             default:
                 targetMenu = toMenu;
