@@ -51,7 +51,7 @@ public class ViewController : MonoBehaviour {
         Info,
         New, 
         Edit,
-        Wayposts,
+        Waypos,
         Anchor,
         Next,
         BEGIN,
