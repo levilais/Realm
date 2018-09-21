@@ -55,7 +55,8 @@ public class ViewController : MonoBehaviour {
         Anchor,
         Next,
         BEGIN,
-        Exit
+        Exit,
+        Realm
     };
 
     public enum ViewMenuType {

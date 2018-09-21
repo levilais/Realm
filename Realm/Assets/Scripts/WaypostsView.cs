@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class AnchorView : MonoBehaviour {
+public class WaypostsView : MonoBehaviour {
 
     private GameObject messageTextObj;
     private Text messageText;

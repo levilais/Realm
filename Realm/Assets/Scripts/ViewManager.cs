@@ -70,7 +70,8 @@ public class ViewManager : MonoBehaviour {
                 if (RealmManager.realmManager.anchorExists) {
                     targetMenu = "BEGIN";
                 } else {
-                    targetMenu = "Anchor";
+                    // will be "Intro" and do some logic to determine how built-out the realm is
+                    targetMenu = "BEGIN";
                 }
                 skipAddingToNavHistory = true;
                 break;
@@ -95,7 +96,6 @@ public class ViewManager : MonoBehaviour {
             existingMenus.Add(menuObject.name);
             if (menuObject.name == targetMenu)
             {
-                //ToggleMenuPanelBackground(menuObject);
                 menuObject.gameObject.SetActive(true);
                 if (!skipAddingToNavHistory) {
                     navigationHistory.Add(fromMenu);
