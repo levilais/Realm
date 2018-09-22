@@ -13,8 +13,10 @@ public class ViewController : MonoBehaviour {
     public ViewType menuUseType;
     public List<ViewName> subMenuItems;
     public List<string> subMenuItemNames;
-    public bool rightButtonExists;
-    public bool leftButtonExists;
+
+    public ViewName leftButtonName = ViewName.None;
+    public ViewName rightButtonName = ViewName.None;
+
     public bool hasDynamicMenuButtonTitles;
 
     [Space(6)]
@@ -59,7 +61,8 @@ public class ViewController : MonoBehaviour {
         BEGIN,
         Exit,
         Realm,
-        PlacementView
+        PlacementView,
+        None
     };
 
     public enum ViewMenuType {
@@ -102,7 +105,12 @@ public class ViewController : MonoBehaviour {
     }
 
     public void InstantiateMenuObject() {
-        rightButton.SetActive(rightButtonExists);
+        //if (rightButtonName != ViewName.None) {
+        //    rightButton.SetActive(true);
+        //} else {
+        //    rightButton.SetActive(false);
+        //}
+
         PopulateButtons();
         PopulateHeader();
         SetScrollviewProperties();
@@ -163,39 +171,34 @@ public class ViewController : MonoBehaviour {
             }
         }
 
-        int i = 0;
-        int timesThrough = subMenuItemNames.Count;
-
-        if (leftButtonExists)
+        if (leftButtonName != ViewName.None)
         {
-            string menuButtonName = subMenuItemNames[0];
+            string menuButtonName = leftButtonName.ToString();
             MenuButton leftMenuButton = leftButton.GetComponent<MenuButton>();
             leftMenuButton.InitializeButtonProperties(menuButtonName, menuButtonName, menuButtonName);
             leftButton.SetActive(true);
-            i += 1;
         }
         else
         {
             leftButton.SetActive(false);
         }
 
-        if (rightButtonExists)
+        if (rightButtonName != ViewName.None)
         {
-            string menuButtonName = subMenuItemNames[timesThrough - 1];
+            string menuButtonName = rightButtonName.ToString();
             MenuButton rightMenuButton = rightButton.GetComponent<MenuButton>();
             rightMenuButton.InitializeButtonProperties(menuButtonName, menuButtonName, menuButtonName);
             rightButton.SetActive(true);
-            timesThrough -= 1;
         }
         else
         {
             rightButton.SetActive(false);
         }
 
-        for (int index = i; index < timesThrough; index++)
+        for (int i = 0; i < subMenuItemNames.Count; i++)
         {
             // Create new instances of our prefab until we've created as many as we specified
-            string menuButtonName = subMenuItemNames[index];
+            string menuButtonName = subMenuItemNames[i];
             GameObject newMenuButton = (GameObject)Instantiate(MenuButtonPF, transform);
             MenuButton menuButton = newMenuButton.GetComponent<MenuButton>();
             menuButton.InitializeButtonProperties(menuButtonName, menuButtonName, menuButtonName);
@@ -203,47 +206,4 @@ public class ViewController : MonoBehaviour {
             menuButton.menuPanelObject = gameObject;
         }
     }
-
-    //void PopulateButtons()
-    //{
-    //    if (!hasDynamicMenuButtonTitles) {
-    //        foreach (ViewName subMenuItem in subMenuItems)
-    //        {
-    //            subMenuItemNames.Add(subMenuItem.ToString());
-    //        }
-    //    }
-
-    //    int i = 0;
-    //    int timesThrough = subMenuItemNames.Count;
-
-    //    if (leftButtonExists) {
-    //        string menuButtonName = subMenuItemNames[0];
-    //        MenuButtonObjectInitializer menuButton = new MenuButtonObjectInitializer(leftButton, menuButtonName);
-    //        leftButton.name = menuButtonName;
-    //        leftButton.SetActive(true);
-    //        i += 1;
-    //    } else {
-    //        leftButton.SetActive(false);
-    //    }
-
-    //    if (rightButtonExists) {
-    //        string menuButtonName = subMenuItemNames[timesThrough - 1];
-    //        MenuButtonObjectInitializer rightMenuButton = new MenuButtonObjectInitializer(rightButton, menuButtonName);
-    //        rightButton.name = menuButtonName;
-    //        rightButton.SetActive(true);
-    //        timesThrough -= 1;
-    //    } else {
-    //        rightButton.SetActive(false);
-    //    }
-
-    //    for (int index = i; index < timesThrough; index++)
-    //    {
-    //        // Create new instances of our prefab until we've created as many as we specified
-    //        GameObject newMenuButton = (GameObject)Instantiate(MenuButtonPF, transform);
-    //        MenuButtonObjectInitializer menuButtons = new MenuButtonObjectInitializer(newMenuButton, subMenuItemNames[index]);
-    //        newMenuButton.transform.parent = transform.GetComponentInChildren<GridLayoutGroup>().transform;
-    //        newMenuButton.name = subMenuItemNames[index];
-    //        newMenuButton.GetComponent<MenuButton>().menuPanelObject = gameObject;
-    //    }
-    //}
 }

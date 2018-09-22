@@ -504,7 +504,7 @@ Prefab:
     - target: {fileID: 114078931295821356, guid: c74b0aac69d814ec9a0c752f071cfc34,
         type: 2}
       propertyPath: subMenuItems.Array.size
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 224053630600986148, guid: c74b0aac69d814ec9a0c752f071cfc34,
         type: 2}
@@ -614,7 +614,7 @@ Prefab:
     - target: {fileID: 114078931295821356, guid: c74b0aac69d814ec9a0c752f071cfc34,
         type: 2}
       propertyPath: subMenuItems.Array.data[0]
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 114078931295821356, guid: c74b0aac69d814ec9a0c752f071cfc34,
         type: 2}
@@ -624,7 +624,7 @@ Prefab:
     - target: {fileID: 114078931295821356, guid: c74b0aac69d814ec9a0c752f071cfc34,
         type: 2}
       propertyPath: subMenuItems.Array.data[1]
-      value: 4
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 114078931295821356, guid: c74b0aac69d814ec9a0c752f071cfc34,
         type: 2}
@@ -643,7 +643,7 @@ Prefab:
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1387242753}
+      objectReference: {fileID: 1979167558}
     - target: {fileID: 114439005890689552, guid: c74b0aac69d814ec9a0c752f071cfc34,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
@@ -658,6 +658,11 @@ Prefab:
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: PerformSegueToTarget
+      objectReference: {fileID: 0}
+    - target: {fileID: 114078931295821356, guid: c74b0aac69d814ec9a0c752f071cfc34,
+        type: 2}
+      propertyPath: leftButtonName
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c74b0aac69d814ec9a0c752f071cfc34, type: 2}
@@ -815,6 +820,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 1857640436}
     m_Modifications:
+    - target: {fileID: 114960726303343858, guid: 6954a9cdfd1484b75ab9a6500266422a,
+        type: 2}
+      propertyPath: subMenuItems.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 224822104036941524, guid: 6954a9cdfd1484b75ab9a6500266422a,
         type: 2}
       propertyPath: m_LocalPosition.x
@@ -1047,6 +1057,11 @@ Prefab:
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: PerformSegueToTarget
+      objectReference: {fileID: 0}
+    - target: {fileID: 114960726303343858, guid: 6954a9cdfd1484b75ab9a6500266422a,
+        type: 2}
+      propertyPath: leftButtonName
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6954a9cdfd1484b75ab9a6500266422a, type: 2}
@@ -1592,6 +1607,12 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 735861409}
+--- !u!114 &788873218 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114834788756012400, guid: c74b0aac69d814ec9a0c752f071cfc34,
+    type: 2}
+  m_PrefabInternal: {fileID: 1654055805}
+  m_Script: {fileID: 11500000, guid: d83da7bc461474c419f212a8fdfcc47f, type: 3}
 --- !u!114 &807415684 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114966382080480830, guid: c74b0aac69d814ec9a0c752f071cfc34,
@@ -1872,6 +1893,11 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: PerformSegueToTarget
       objectReference: {fileID: 0}
+    - target: {fileID: 114863273118564482, guid: 5f154d1e48a6644cb85dc783c768be38,
+        type: 2}
+      propertyPath: rightButtonName
+      value: 12
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5f154d1e48a6644cb85dc783c768be38, type: 2}
   m_IsPrefabParent: 0
@@ -1890,7 +1916,7 @@ Prefab:
     - target: {fileID: 114078931295821356, guid: c74b0aac69d814ec9a0c752f071cfc34,
         type: 2}
       propertyPath: subMenuItems.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224053630600986148, guid: c74b0aac69d814ec9a0c752f071cfc34,
         type: 2}
@@ -2004,7 +2030,7 @@ Prefab:
     - target: {fileID: 114078931295821356, guid: c74b0aac69d814ec9a0c752f071cfc34,
         type: 2}
       propertyPath: subMenuItems.Array.data[0]
-      value: 5
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 114078931295821356, guid: c74b0aac69d814ec9a0c752f071cfc34,
         type: 2}
@@ -2074,11 +2100,16 @@ Prefab:
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1387242753}
+      objectReference: {fileID: 1526780891}
     - target: {fileID: 114439005890689552, guid: c74b0aac69d814ec9a0c752f071cfc34,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: PerformSegueToTarget
+      objectReference: {fileID: 0}
+    - target: {fileID: 114078931295821356, guid: c74b0aac69d814ec9a0c752f071cfc34,
+        type: 2}
+      propertyPath: leftButtonName
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c74b0aac69d814ec9a0c752f071cfc34, type: 2}
@@ -2462,6 +2493,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 1857640436}
     m_Modifications:
+    - target: {fileID: 114078931295821356, guid: c74b0aac69d814ec9a0c752f071cfc34,
+        type: 2}
+      propertyPath: subMenuItems.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 224053630600986148, guid: c74b0aac69d814ec9a0c752f071cfc34,
         type: 2}
       propertyPath: m_LocalPosition.x
@@ -2574,7 +2610,7 @@ Prefab:
     - target: {fileID: 114078931295821356, guid: c74b0aac69d814ec9a0c752f071cfc34,
         type: 2}
       propertyPath: subMenuItems.Array.data[0]
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 114078931295821356, guid: c74b0aac69d814ec9a0c752f071cfc34,
         type: 2}
@@ -2630,6 +2666,11 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: PerformSegueToTarget
       objectReference: {fileID: 0}
+    - target: {fileID: 114078931295821356, guid: c74b0aac69d814ec9a0c752f071cfc34,
+        type: 2}
+      propertyPath: leftButtonName
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c74b0aac69d814ec9a0c752f071cfc34, type: 2}
   m_IsPrefabParent: 0
@@ -2648,7 +2689,7 @@ Prefab:
     - target: {fileID: 114078931295821356, guid: c74b0aac69d814ec9a0c752f071cfc34,
         type: 2}
       propertyPath: subMenuItems.Array.size
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 224053630600986148, guid: c74b0aac69d814ec9a0c752f071cfc34,
         type: 2}
@@ -2816,12 +2857,12 @@ Prefab:
     - target: {fileID: 114078931295821356, guid: c74b0aac69d814ec9a0c752f071cfc34,
         type: 2}
       propertyPath: subMenuItems.Array.data[1]
-      value: 3
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 114078931295821356, guid: c74b0aac69d814ec9a0c752f071cfc34,
         type: 2}
       propertyPath: subMenuItems.Array.data[0]
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 114078931295821356, guid: c74b0aac69d814ec9a0c752f071cfc34,
         type: 2}
@@ -2868,6 +2909,11 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: PerformSegueToTarget
       objectReference: {fileID: 0}
+    - target: {fileID: 114078931295821356, guid: c74b0aac69d814ec9a0c752f071cfc34,
+        type: 2}
+      propertyPath: leftButtonName
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c74b0aac69d814ec9a0c752f071cfc34, type: 2}
   m_IsPrefabParent: 0
@@ -2876,12 +2922,6 @@ RectTransform:
   m_PrefabParentObject: {fileID: 224053630600986148, guid: c74b0aac69d814ec9a0c752f071cfc34,
     type: 2}
   m_PrefabInternal: {fileID: 1354945346}
---- !u!114 &1387242753 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114296890049413974, guid: 5f154d1e48a6644cb85dc783c768be38,
-    type: 2}
-  m_PrefabInternal: {fileID: 1659799472}
-  m_Script: {fileID: 11500000, guid: d83da7bc461474c419f212a8fdfcc47f, type: 3}
 --- !u!1 &1407710489
 GameObject:
   m_ObjectHideFlags: 0
@@ -2944,6 +2984,12 @@ MonoBehaviour:
   m_FirstSelected: {fileID: 0}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
+--- !u!114 &1526780891 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114834788756012400, guid: c74b0aac69d814ec9a0c752f071cfc34,
+    type: 2}
+  m_PrefabInternal: {fileID: 868628522}
+  m_Script: {fileID: 11500000, guid: d83da7bc461474c419f212a8fdfcc47f, type: 3}
 --- !u!114 &1580402563 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114673915035185886, guid: 6954a9cdfd1484b75ab9a6500266422a,
@@ -2960,7 +3006,7 @@ Prefab:
     - target: {fileID: 114078931295821356, guid: c74b0aac69d814ec9a0c752f071cfc34,
         type: 2}
       propertyPath: subMenuItems.Array.size
-      value: 7
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 224053630600986148, guid: c74b0aac69d814ec9a0c752f071cfc34,
         type: 2}
@@ -3108,7 +3154,7 @@ Prefab:
     - target: {fileID: 114078931295821356, guid: c74b0aac69d814ec9a0c752f071cfc34,
         type: 2}
       propertyPath: subMenuItems.Array.data[0]
-      value: 5
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 114078931295821356, guid: c74b0aac69d814ec9a0c752f071cfc34,
         type: 2}
@@ -3139,11 +3185,21 @@ Prefab:
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1387242753}
+      objectReference: {fileID: 788873218}
     - target: {fileID: 114439005890689552, guid: c74b0aac69d814ec9a0c752f071cfc34,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: PerformSegueToTarget
+      objectReference: {fileID: 0}
+    - target: {fileID: 114078931295821356, guid: c74b0aac69d814ec9a0c752f071cfc34,
+        type: 2}
+      propertyPath: rightButtonName
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 114078931295821356, guid: c74b0aac69d814ec9a0c752f071cfc34,
+        type: 2}
+      propertyPath: leftButtonName
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c74b0aac69d814ec9a0c752f071cfc34, type: 2}
@@ -3160,6 +3216,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 1857640436}
     m_Modifications:
+    - target: {fileID: 114863273118564482, guid: 5f154d1e48a6644cb85dc783c768be38,
+        type: 2}
+      propertyPath: subMenuItems.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 224896674089399406, guid: 5f154d1e48a6644cb85dc783c768be38,
         type: 2}
       propertyPath: m_LocalPosition.x
@@ -3307,6 +3368,16 @@ Prefab:
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: PerformSegueToTarget
+      objectReference: {fileID: 0}
+    - target: {fileID: 114863273118564482, guid: 5f154d1e48a6644cb85dc783c768be38,
+        type: 2}
+      propertyPath: rightButtonName
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 114863273118564482, guid: 5f154d1e48a6644cb85dc783c768be38,
+        type: 2}
+      propertyPath: leftButtonName
+      value: 13
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5f154d1e48a6644cb85dc783c768be38, type: 2}
@@ -3571,6 +3642,12 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 1312019523}
   m_Script: {fileID: 11500000, guid: d83da7bc461474c419f212a8fdfcc47f, type: 3}
+--- !u!114 &1979167558 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114834788756012400, guid: c74b0aac69d814ec9a0c752f071cfc34,
+    type: 2}
+  m_PrefabInternal: {fileID: 238710344}
+  m_Script: {fileID: 11500000, guid: d83da7bc461474c419f212a8fdfcc47f, type: 3}
 --- !u!1001 &2005666507
 Prefab:
   m_ObjectHideFlags: 0
@@ -3578,6 +3655,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 1857640436}
     m_Modifications:
+    - target: {fileID: 114863273118564482, guid: 5f154d1e48a6644cb85dc783c768be38,
+        type: 2}
+      propertyPath: subMenuItems.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 224896674089399406, guid: 5f154d1e48a6644cb85dc783c768be38,
         type: 2}
       propertyPath: m_LocalPosition.x
@@ -3700,6 +3782,26 @@ Prefab:
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: PerformSegueToTarget
+      objectReference: {fileID: 0}
+    - target: {fileID: 114863273118564482, guid: 5f154d1e48a6644cb85dc783c768be38,
+        type: 2}
+      propertyPath: rightButtonName
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114863273118564482, guid: 5f154d1e48a6644cb85dc783c768be38,
+        type: 2}
+      propertyPath: leftButtonName
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114863273118564482, guid: 5f154d1e48a6644cb85dc783c768be38,
+        type: 2}
+      propertyPath: subMenuItems.Array.data[0]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114863273118564482, guid: 5f154d1e48a6644cb85dc783c768be38,
+        type: 2}
+      propertyPath: subMenuItems.Array.data[1]
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5f154d1e48a6644cb85dc783c768be38, type: 2}
