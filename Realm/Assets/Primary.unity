@@ -3169,7 +3169,7 @@ Prefab:
     - target: {fileID: 114078931295821356, guid: c74b0aac69d814ec9a0c752f071cfc34,
         type: 2}
       propertyPath: hasDynamicMenuButtonTitles
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114733257541105582, guid: c74b0aac69d814ec9a0c752f071cfc34,
         type: 2}
@@ -3424,8 +3424,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d0dc69238e8847578919c91039aac6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waypoNames: 000000000100000003000000
+  waypoNames: 0100000001000000
   waypoNameStrings: []
+  MenuButtonPF: {fileID: 1348476042403918, guid: 75df25727a496485caca4a3dbf3671b5,
+    type: 2}
 --- !u!1 &1857640435
 GameObject:
   m_ObjectHideFlags: 0

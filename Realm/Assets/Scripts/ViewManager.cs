@@ -53,8 +53,6 @@ public class ViewManager : MonoBehaviour {
             skipAddingToNavHistory = true;
         }
 
-        Debug.Log("toMenu: " + toMenu);
-
         string targetMenu;
         switch (toMenu) {
             case "Back":
