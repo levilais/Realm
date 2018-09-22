@@ -5,45 +5,45 @@ using UnityEngine.UI;
 
 public class MenuButtonObjectInitializer : MonoBehaviour
 {
-    public Text titleText;
-    public Button button;
+    //public Text titleText;
+    //public Button button;
 
-    public string buttonName;
-    public Sprite imageDefault;
-    public Sprite imagePressed;
+    //public string buttonName;
+    //public Sprite imageDefault;
+    //public Sprite imagePressed;
 
-    public MenuButtonObjectInitializer(GameObject buttonParent, string _buttonName)
-    {
-        InitializeButton(buttonParent, _buttonName);
-    }
+    //public MenuButtonObjectInitializer(GameObject buttonParent, string _buttonName)
+    //{
+    //    InitializeButton(buttonParent, _buttonName);
+    //}
 
-    private void InitializeButton(GameObject buttonParent, string _buttonName)
-    {
-        SetProperties(_buttonName);
-        SetButtonImagesForStates(buttonParent);
-        SetButtonTitle(buttonParent, _buttonName);
-    }
+    //private void InitializeButton(GameObject buttonParent, string _buttonName)
+    //{
+    //    SetProperties(_buttonName);
+    //    SetButtonImagesForStates(buttonParent);
+    //    SetButtonTitle(buttonParent, _buttonName);
+    //}
 
-    private void SetProperties(string _buttonName)
-    {
-        buttonName = _buttonName;
-        imageDefault = Resources.Load<Sprite>("Images/" + _buttonName);
-        imagePressed = Resources.Load<Sprite>("Images/" + _buttonName + "Pressed");
-    }
+    //private void SetProperties(string _buttonName)
+    //{
+    //    buttonName = _buttonName;
+    //    imageDefault = Resources.Load<Sprite>("Images/" + _buttonName);
+    //    imagePressed = Resources.Load<Sprite>("Images/" + _buttonName + "Pressed");
+    //}
 
-    private void SetButtonTitle(GameObject buttonParent, string _buttonName)
-    {
-        titleText = buttonParent.GetComponentInChildren<Text>();
-        titleText.text = _buttonName;
-    }
+    //private void SetButtonTitle(GameObject buttonParent, string _buttonName)
+    //{
+    //    titleText = buttonParent.GetComponentInChildren<Text>();
+    //    titleText.text = _buttonName;
+    //}
 
-    private void SetButtonImagesForStates(GameObject buttonParent)
-    {
-        button = buttonParent.GetComponentInChildren<Button>();
-        button.image.sprite = imageDefault;
+    //private void SetButtonImagesForStates(GameObject buttonParent)
+    //{
+    //    button = buttonParent.GetComponentInChildren<Button>();
+    //    button.image.sprite = imageDefault;
 
-        SpriteState spriteState = new SpriteState();
-        spriteState.pressedSprite = imagePressed;
-        button.spriteState = spriteState;
-    }
+    //    SpriteState spriteState = new SpriteState();
+    //    spriteState.pressedSprite = imagePressed;
+    //    button.spriteState = spriteState;
+    //}
 }

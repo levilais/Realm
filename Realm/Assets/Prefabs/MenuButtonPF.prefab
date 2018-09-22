@@ -103,6 +103,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menuPanelObject: {fileID: 0}
+  buttonTitle: 
+  buttonImageName: 
+  buttonNavTarget: 
 --- !u!114 &114646934302535440
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -170,7 +173,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 114405093061153842}
-        m_MethodName: NavigateToMenuClicked
+        m_MethodName: PerformSegueToTarget
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
