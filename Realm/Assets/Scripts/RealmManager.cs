@@ -8,6 +8,7 @@ public class RealmManager : MonoBehaviour {
     public static RealmManager realmManager = null;
 
     public bool anchorExists;
+    public string realmName;
 
     private void Awake()
     {
@@ -25,6 +26,7 @@ public class RealmManager : MonoBehaviour {
 
         // Will use persistent storage / database to determine if Anchor exists
         anchorExists = false;
+        realmName = "Realm Name 1";
     }
 }
 

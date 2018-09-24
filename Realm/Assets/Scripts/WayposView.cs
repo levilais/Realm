@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Waypos : MonoBehaviour {
+public class WayposView : MonoBehaviour {
 
     //public GameObject menuButtonParent;
     public List<WaypoName> waypoNames;
