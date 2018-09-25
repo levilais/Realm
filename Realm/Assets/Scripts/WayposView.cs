@@ -10,12 +10,42 @@ public class WayposView : MonoBehaviour {
 
     public void OnEnable()
     {
+        if (RealmManager.realmManager.waypos.Count > 0)
+        {
+            // do something with existing waypose
+            Debug.Log(RealmManager.realmManager.waypos.Count + " waypos already exist");
+        }
+        else
+        {
+            CreateDefaultWaypos();
+            RealmData.SaveWaypos();
+        }
         PopulateDynamicButtons();
     }
 
     private void OnDisable()
     {
         RemoveDynamicButtons();
+    }
+
+    private void CreateDefaultWaypos()
+    {
+        if (RealmManager.realmManager.waypos.Count <= 0)
+        {
+            RealmManager.realmManager.waypos = new List<RObject>();
+            int i = 0;
+            while (i < 5)
+            {
+                RObject newWaypo = new RObject();
+                string waypoNumber = (i + 1).ToString();
+                string title = "WP-" + waypoNumber;
+                newWaypo.title = title;
+                newWaypo.imageName = "New";
+                newWaypo.rObjectType = RObject.RObjectType.Waypo;
+                RealmManager.realmManager.waypos.Add(newWaypo);
+                i += 1;
+            }
+        }
     }
 
     private void RemoveDynamicButtons()

@@ -32,37 +32,8 @@ public class RealmManager : MonoBehaviour {
         // Will use persistent storage / database to determine if Anchor exists
         anchorExists = false;
         anchor = new RObject();
-    }
 
-    private void Start()
-    {
-        RealmData.LoadWaypos();
-
-        if (waypos.Count > 0) {
-            // do something with existing waypose
-            Debug.Log(waypos.Count + " waypos already exist");
-        } else
-        {
-            CreateDefaultWaypos();
-            RealmData.SaveWaypos();
-        }
-    }
-
-    private void CreateDefaultWaypos()
-    {
-        waypos = new List<RObject>();
-        int i = 0;
-        while (i < 5)
-        {
-            RObject newWaypo = new RObject();
-            string waypoNumber = (i + 1).ToString();
-            string title = "WP-" + waypoNumber;
-            newWaypo.title = title;
-            newWaypo.imageName = "New";
-            newWaypo.rObjectType = RObject.RObjectType.Waypo;
-            waypos.Add(newWaypo);
-            i += 1;
-        }
+        RealmData.LoadRealmData();
     }
 
     public void RegisterActiveObject(string rObjectTitle)

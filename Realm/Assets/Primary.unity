@@ -664,7 +664,8 @@ Prefab:
       propertyPath: leftButtonName
       value: 5
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114332209190581050, guid: c74b0aac69d814ec9a0c752f071cfc34, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: c74b0aac69d814ec9a0c752f071cfc34, type: 2}
   m_IsPrefabParent: 0
 --- !u!224 &238710345 stripped
@@ -1153,7 +1154,8 @@ Prefab:
       propertyPath: leftButtonName
       value: 5
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114382335595939780, guid: 6954a9cdfd1484b75ab9a6500266422a, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 6954a9cdfd1484b75ab9a6500266422a, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &449045156
@@ -1593,34 +1595,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8ce7d6271a01a4274a00066492aed04a, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &704712962
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 704712963}
-  m_Layer: 0
-  m_Name: RealmData
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &704712963
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 704712962}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 10
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &705993622
 GameObject:
   m_ObjectHideFlags: 0
@@ -2016,7 +1990,8 @@ Prefab:
       propertyPath: rightButtonName
       value: 12
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114136923927602062, guid: 5f154d1e48a6644cb85dc783c768be38, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 5f154d1e48a6644cb85dc783c768be38, type: 2}
   m_IsPrefabParent: 0
 --- !u!224 &838159855 stripped
@@ -2229,7 +2204,13 @@ Prefab:
       propertyPath: leftButtonName
       value: 5
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 114078931295821356, guid: c74b0aac69d814ec9a0c752f071cfc34,
+        type: 2}
+      propertyPath: hasDynamicMenuButtonTitles
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 114332209190581050, guid: c74b0aac69d814ec9a0c752f071cfc34, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: c74b0aac69d814ec9a0c752f071cfc34, type: 2}
   m_IsPrefabParent: 0
 --- !u!224 &868628523 stripped
@@ -2620,6 +2601,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97a171266bfcf4ccf821eb7dffe434e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MenuButtonPF: {fileID: 1348476042403918, guid: 75df25727a496485caca4a3dbf3671b5,
+    type: 2}
 --- !u!1001 &1312019523
 Prefab:
   m_ObjectHideFlags: 0
@@ -2805,7 +2788,8 @@ Prefab:
       propertyPath: leftButtonName
       value: 5
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114332209190581050, guid: c74b0aac69d814ec9a0c752f071cfc34, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: c74b0aac69d814ec9a0c752f071cfc34, type: 2}
   m_IsPrefabParent: 0
 --- !u!224 &1312019524 stripped
@@ -3048,7 +3032,8 @@ Prefab:
       propertyPath: leftButtonName
       value: 5
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114332209190581050, guid: c74b0aac69d814ec9a0c752f071cfc34, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: c74b0aac69d814ec9a0c752f071cfc34, type: 2}
   m_IsPrefabParent: 0
 --- !u!224 &1354945347 stripped
@@ -3335,7 +3320,8 @@ Prefab:
       propertyPath: leftButtonName
       value: 5
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114332209190581050, guid: c74b0aac69d814ec9a0c752f071cfc34, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: c74b0aac69d814ec9a0c752f071cfc34, type: 2}
   m_IsPrefabParent: 0
 --- !u!224 &1654055806 stripped
@@ -3513,7 +3499,8 @@ Prefab:
       propertyPath: leftButtonName
       value: 13
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114136923927602062, guid: 5f154d1e48a6644cb85dc783c768be38, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 5f154d1e48a6644cb85dc783c768be38, type: 2}
   m_IsPrefabParent: 0
 --- !u!224 &1659799473 stripped
@@ -3938,7 +3925,8 @@ Prefab:
       propertyPath: subMenuItems.Array.data[1]
       value: 2
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114136923927602062, guid: 5f154d1e48a6644cb85dc783c768be38, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 5f154d1e48a6644cb85dc783c768be38, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &2014896387
