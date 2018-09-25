@@ -9,9 +9,12 @@ public class RealmManager : MonoBehaviour {
 
     public bool anchorExists;
     public string realmName;
+    public RObject anchor;
+    public List<Waypo> waypos = new List<Waypo>();
 
     private void Awake()
     {
+
         //Check if instance already exists
         if (realmManager == null)
             //if not, set instance to this
@@ -26,7 +29,30 @@ public class RealmManager : MonoBehaviour {
 
         // Will use persistent storage / database to determine if Anchor exists
         anchorExists = false;
-        realmName = "Realm Name 1";
+        anchor = new RObject();
+    }
+
+    private void Start()
+    {
+        RealmData.LoadWaypos();
+
+        if (waypos.Count > 0) {
+            // do something with existing waypose
+            Debug.Log(waypos.Count + " waypos already exist");
+        } else {
+            int i = 0;
+            while (i < 5)
+            {
+                Waypo newWaypo = new Waypo();
+                string waypoNumber = (i + 1).ToString();
+                Debug.Log(waypoNumber);
+                newWaypo.title = "WayPoint-" + waypoNumber;
+                Debug.Log(newWaypo.title);
+                waypos.Add(newWaypo);
+                i += 1;
+            }
+            RealmData.SaveWaypos();
+        }
     }
 }
 
