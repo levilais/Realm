@@ -5,19 +5,8 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class WayposView : MonoBehaviour {
-
-    //public GameObject menuButtonParent;
-    public List<WaypoName> waypoNames;
-    public List<string> waypoNameStrings;
+    
     public GameObject MenuButtonPF;
-
-    public enum WaypoName
-    {
-        Back,
-        New,
-        Waypo,
-        Anchor
-    }
 
     public void OnEnable()
     {
@@ -38,17 +27,10 @@ public class WayposView : MonoBehaviour {
             Debug.Log("childObject name: " + childObject.name);
             Destroy(childObject.gameObject);
         }
-        waypoNameStrings.Clear();
     }
 
     private void PopulateDynamicButtons()
     {
-
-        foreach (WaypoName waypoNameString in waypoNames)
-        {
-            waypoNameStrings.Add(waypoNameString.ToString());
-        }
-
         for (int i = 0; i < RealmManager.realmManager.waypos.Count; i++)
         {
             // Create new instances of our prefab until we've created as many as we specified

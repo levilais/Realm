@@ -11,6 +11,7 @@ public class RealmManager : MonoBehaviour {
     public string realmName;
     public RObject anchor;
     public List<RObject> waypos;
+    public List<RObject> displays;
     public RObject activeObject;
 
     private void Awake()
