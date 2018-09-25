@@ -10,6 +10,7 @@ public class MenuButton : MonoBehaviour
     public string title;
     public string imageName;
     public string navTarget;
+    public RObject rObject;
 
     public void InitializeButtonProperties(string buttonTitle, string buttonImageName, string buttonNavTarget)
     {
@@ -41,7 +42,7 @@ public class MenuButton : MonoBehaviour
 
     public void PerformSegueToTarget()
     {
-        RealmManager.realmManager.RegisterActiveObject(title);
+        RealmManager.realmManager.RegisterActiveObject(rObject.uid);
         ViewManager.viewManager.performSegue(navTarget, menuPanelObject);
     }
 }

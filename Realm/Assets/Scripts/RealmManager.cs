@@ -33,16 +33,20 @@ public class RealmManager : MonoBehaviour {
         anchorExists = false;
         anchor = new RObject();
 
+        if (RealmData.eraseModeActive) {
+            RealmData.SaveWaypos();
+        }
+
         RealmData.LoadRealmData();
     }
 
-    public void RegisterActiveObject(string rObjectTitle)
+    public void RegisterActiveObject(System.Guid rObjectUID)
     {
         int i = 0;
         Debug.Log("trying to find match to register");
         foreach (RObject waypo in RealmManager.realmManager.waypos)
         {
-            if (waypo.title == rObjectTitle)
+            if (waypo.uid == rObjectUID)
             {
                 RealmManager.realmManager.activeObject = RealmManager.realmManager.waypos[i];
                 Debug.Log("object registered");

@@ -53,6 +53,7 @@ public class DisplaysView : MonoBehaviour {
                 newDisplayButton.transform.parent = transform.GetComponentInChildren<GridLayoutGroup>().transform;
                 displayMenuButton.navTarget = display.title;
                 displayMenuButton.menuPanelObject = gameObject;
+                displayMenuButton.rObject = display;
             }
         }
     }

@@ -7,9 +7,9 @@ using UnityEngine;
 
 public static class RealmData
 {
+
     // To erase persistent data: manually change this to "true", run the app, stop the app, change it back to "false".
     public static bool eraseModeActive = false;
-
     public static List<RObject> WaypoObjects; // setup to check if they exist and if they do update RealmManager.realmManager
 
     public static void SaveWaypos()

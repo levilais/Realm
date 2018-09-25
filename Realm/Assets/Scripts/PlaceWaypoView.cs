@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PlacementView : MonoBehaviour {
+public class PlaceWaypoView : MonoBehaviour {
 
     public GameObject confirmImage;
 
@@ -26,13 +26,8 @@ public class PlacementView : MonoBehaviour {
 
     public void ProceedSequentially()
     {
-        string anchorString = "Waypost";
+        string anchorString = "Anchor";
         string targetString = RealmManager.realmManager.activeObject.title;
-
-        if (RealmManager.realmManager.activeObject.rObjectType == RObject.RObjectType.Waypo) {
-            Debug.Log(RealmManager.realmManager.activeObject.rObjectType.ToString());
-            anchorString = "Anchor";
-        }
 
         switch (stepInProcess) {
             case 0:

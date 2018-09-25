@@ -3433,7 +3433,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1556828591134974, guid: 5f154d1e48a6644cb85dc783c768be38, type: 2}
       propertyPath: m_Name
-      value: PlacementView
+      value: PlaceWaypoView
       objectReference: {fileID: 0}
     - target: {fileID: 114863273118564482, guid: 5f154d1e48a6644cb85dc783c768be38,
         type: 2}
