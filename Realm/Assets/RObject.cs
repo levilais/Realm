@@ -56,6 +56,7 @@ public class RObject {
         }
 
         RealmManager.realmManager.activeObject = new RObject();
+        RealmData.SaveWaypos();
     }
 }
 
