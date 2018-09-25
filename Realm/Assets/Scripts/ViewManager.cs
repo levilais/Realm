@@ -80,9 +80,6 @@ public class ViewManager : MonoBehaviour {
                 navigationHistory.RemoveAt(navigationHistory.Count - 1);
                 skipAddingToNavHistory = true;
                 break;
-            case "New":
-                targetMenu = "PlacementView";
-                break;
             default:
                 targetMenu = toMenu;
                 break;

@@ -735,6 +735,10 @@ MonoBehaviour:
     title: Default
     imageName: Default
     uid: 0
+    rPoint:
+      rx: 0
+      ry: 0
+      rz: 0
   waypos: []
 --- !u!114 &275979522 stripped
 MonoBehaviour:
@@ -3458,7 +3462,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc87feed144e14bab838f28dc4fec39c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waypoNames: 0100000001000000
+  waypoNames: 
   waypoNameStrings: []
   MenuButtonPF: {fileID: 1348476042403918, guid: 75df25727a496485caca4a3dbf3671b5,
     type: 2}

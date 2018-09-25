@@ -43,20 +43,26 @@ public class WayposView : MonoBehaviour {
 
     private void PopulateDynamicButtons()
     {
+
         foreach (WaypoName waypoNameString in waypoNames)
         {
             waypoNameStrings.Add(waypoNameString.ToString());
         }
 
-        for (int i = 0; i < waypoNameStrings.Count; i++)
+        for (int i = 0; i < RealmManager.realmManager.waypos.Count; i++)
         {
             // Create new instances of our prefab until we've created as many as we specified
-            string menuButtonName = waypoNameStrings[i];
+            Waypo waypo = RealmManager.realmManager.waypos[i];
             GameObject newMenuButton = (GameObject)Instantiate(MenuButtonPF, transform);
             MenuButton menuButton = newMenuButton.GetComponent<MenuButton>();
-            string title = "WP-" + i;
-            menuButton.InitializeButtonProperties(title, menuButtonName, title);
+            menuButton.InitializeButtonProperties(waypo.title, waypo.imageName, waypo.title);
             newMenuButton.transform.parent = transform.GetComponentInChildren<GridLayoutGroup>().transform;
+            if (waypo.imageName == "New")
+            {
+                menuButton.navTarget = "PlacementView";
+            } else {
+                menuButton.navTarget = "waypo.Title";
+            }
             menuButton.menuPanelObject = gameObject;
         }
     }

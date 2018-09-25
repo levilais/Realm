@@ -39,19 +39,26 @@ public class RealmManager : MonoBehaviour {
         if (waypos.Count > 0) {
             // do something with existing waypose
             Debug.Log(waypos.Count + " waypos already exist");
-        } else {
-            int i = 0;
-            while (i < 5)
-            {
-                Waypo newWaypo = new Waypo();
-                string waypoNumber = (i + 1).ToString();
-                Debug.Log(waypoNumber);
-                newWaypo.title = "WayPoint-" + waypoNumber;
-                Debug.Log(newWaypo.title);
-                waypos.Add(newWaypo);
-                i += 1;
-            }
+        } else
+        {
+            CreateDefaultWaypos();
             RealmData.SaveWaypos();
+        }
+    }
+
+    private void CreateDefaultWaypos()
+    {
+        int i = 0;
+        while (i < 5)
+        {
+            Waypo newWaypo = new Waypo();
+            string waypoNumber = (i + 1).ToString();
+            string title = "WP-" + waypoNumber;
+
+            newWaypo.title = title;
+            newWaypo.imageName = "New";
+            waypos.Add(newWaypo);
+            i += 1;
         }
     }
 }
