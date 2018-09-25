@@ -52,12 +52,12 @@ public class WayposView : MonoBehaviour {
         for (int i = 0; i < RealmManager.realmManager.waypos.Count; i++)
         {
             // Create new instances of our prefab until we've created as many as we specified
-            Waypo waypo = RealmManager.realmManager.waypos[i];
+            RObject waypo = RealmManager.realmManager.waypos[i];
             GameObject newMenuButton = (GameObject)Instantiate(MenuButtonPF, transform);
             MenuButton menuButton = newMenuButton.GetComponent<MenuButton>();
             menuButton.InitializeButtonProperties(waypo.title, waypo.imageName, waypo.title);
             newMenuButton.transform.parent = transform.GetComponentInChildren<GridLayoutGroup>().transform;
-            if (waypo.imageName == "New")
+            if (!waypo.hasBeenPlaced)
             {
                 menuButton.navTarget = "PlacementView";
             } else {

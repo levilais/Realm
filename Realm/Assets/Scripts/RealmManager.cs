@@ -10,7 +10,8 @@ public class RealmManager : MonoBehaviour {
     public bool anchorExists;
     public string realmName;
     public RObject anchor;
-    public List<Waypo> waypos = new List<Waypo>();
+    public List<RObject> waypos;
+    public RObject activeObject;
 
     private void Awake()
     {
@@ -48,16 +49,32 @@ public class RealmManager : MonoBehaviour {
 
     private void CreateDefaultWaypos()
     {
+        waypos = new List<RObject>();
         int i = 0;
         while (i < 5)
         {
-            Waypo newWaypo = new Waypo();
+            RObject newWaypo = new RObject();
             string waypoNumber = (i + 1).ToString();
             string title = "WP-" + waypoNumber;
-
             newWaypo.title = title;
             newWaypo.imageName = "New";
+            newWaypo.rObjectType = RObject.RObjectType.Waypo;
             waypos.Add(newWaypo);
+            i += 1;
+        }
+    }
+
+    public void RegisterActiveObject(string rObjectTitle)
+    {
+        int i = 0;
+        Debug.Log("trying to find match to register");
+        foreach (RObject waypo in RealmManager.realmManager.waypos)
+        {
+            if (waypo.title == rObjectTitle)
+            {
+                RealmManager.realmManager.activeObject = RealmManager.realmManager.waypos[i];
+                Debug.Log("object registered");
+            }
             i += 1;
         }
     }

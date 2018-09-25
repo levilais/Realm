@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class PlacementView : MonoBehaviour {
-
+    
     private GameObject messageTextObj;
     private Text messageText;
     private int stepInProcess = 0;
@@ -39,6 +39,9 @@ public class PlacementView : MonoBehaviour {
                 stepInProcess += 1;
                 break;
             case 3:
+                // THIS IS WHERE WE CHANGE THE IMAGE AND "HAS BEEN SET" PROPERTY
+                RObject activeObject = RealmManager.realmManager.activeObject;
+                activeObject.PlaceObject();
                 messageText.text = "Waypost [Insert Name] has been set.";
                 stepInProcess += 1;
                 break;

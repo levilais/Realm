@@ -42,5 +42,6 @@ public class MenuButton : MonoBehaviour
     public void PerformSegueToTarget()
     {
         ViewManager.viewManager.performSegue(navTarget, menuPanelObject);
+        RealmManager.realmManager.RegisterActiveObject(title);
     }
 }

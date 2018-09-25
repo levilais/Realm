@@ -9,15 +9,14 @@ public static class RealmData
 {
     public static bool eraseModeActive = false;
 
-    public static string realmName = RealmManager.realmManager.realmName;
-    public static List<Waypo> RObjects; // setup to check if they exist and if they do update RealmManager.realmManager
+    public static List<RObject> RObjects; // setup to check if they exist and if they do update RealmManager.realmManager
 
     public static void SaveWaypos()
     {
         if (eraseModeActive) {
             BinaryFormatter bf = new BinaryFormatter();
             FileStream file = File.Create(Application.persistentDataPath + "/waypos.gd");
-            bf.Serialize(file, new List<Waypo>());
+            bf.Serialize(file, new List<RObject>());
             file.Close();
         } else {
             BinaryFormatter bf = new BinaryFormatter();
@@ -34,7 +33,7 @@ public static class RealmData
             {
                 BinaryFormatter bf = new BinaryFormatter();
                 FileStream file = File.Open(Application.persistentDataPath + "/waypos.gd", FileMode.Open);
-                RObjects = (List<Waypo>)bf.Deserialize(file);
+                RObjects = (List<RObject>)bf.Deserialize(file);
                 file.Close();
 
                 RealmManager.realmManager.waypos = RObjects;
