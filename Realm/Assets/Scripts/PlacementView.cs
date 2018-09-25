@@ -4,7 +4,9 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class PlacementView : MonoBehaviour {
-    
+
+    public GameObject confirmImage;
+
     private GameObject messageTextObj;
     private Text messageText;
     private int stepInProcess = 0;
@@ -24,28 +26,40 @@ public class PlacementView : MonoBehaviour {
 
     public void ProceedSequentially()
     {
+        string anchorString = "Waypost";
+        string targetString = RealmManager.realmManager.activeObject.title;
+
+        if (RealmManager.realmManager.activeObject.rObjectType == RObject.RObjectType.Waypo) {
+            Debug.Log(RealmManager.realmManager.activeObject.rObjectType.ToString());
+            anchorString = "Anchor";
+        }
+
         switch (stepInProcess) {
             case 0:
-                messageText.text = "Step 1: Scan your \"Anchor\" image...";
+                messageText.text = "Step 1: Scan your \"" + anchorString + "\" image...";
                 stepInProcess += 1;
                 break;
             case 1:
                 // This will appear for 2 seconds (maybe 3) when Anchor is found
-                messageText.text = "You are now connected to your Anchor.";
+                confirmImage.SetActive(true);
+                messageText.text = "You are now connected to your " + anchorString + ".";
                 stepInProcess += 1;
                 break;
             case 2:
-                messageText.text = "Step 2: Scan “Waypost [Insert Name]” image";
+                confirmImage.SetActive(false);
+                messageText.text = "Step 2: Scan the “" + targetString + "\" image";
                 stepInProcess += 1;
                 break;
             case 3:
+                confirmImage.SetActive(true);
                 // THIS IS WHERE WE CHANGE THE IMAGE AND "HAS BEEN SET" PROPERTY
                 RObject activeObject = RealmManager.realmManager.activeObject;
                 activeObject.PlaceObject();
-                messageText.text = "Waypost [Insert Name] has been set.";
+                messageText.text =  targetString + " has been set.";
                 stepInProcess += 1;
                 break;
             case 4:
+                confirmImage.SetActive(false);
                 RealmManager.realmManager.anchorExists = true;
                 string toMenu;
                 if (ViewManager.viewManager.navigationHistory.Count == 0) {
@@ -64,6 +78,7 @@ public class PlacementView : MonoBehaviour {
     private void OnDisable()
     {
         stepInProcess = 0;
+        confirmImage.SetActive(false);
         messageTextObj.SetActive(false);
     }
 }
