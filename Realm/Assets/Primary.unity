@@ -741,6 +741,7 @@ MonoBehaviour:
       rz: 0
     rObjectType: 0
   waypos: []
+  displays: []
   activeObject:
     title: Default
     imageName: Default
@@ -2603,6 +2604,22 @@ Transform:
   m_PrefabParentObject: {fileID: 4346840500143702, guid: 455b404c52d7d4188bf02f3682baa204,
     type: 2}
   m_PrefabInternal: {fileID: 1251276738}
+--- !u!1 &1307310660 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1992899094733406, guid: c74b0aac69d814ec9a0c752f071cfc34,
+    type: 2}
+  m_PrefabInternal: {fileID: 868628522}
+--- !u!114 &1307310665
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1307310660}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97a171266bfcf4ccf821eb7dffe434e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1312019523
 Prefab:
   m_ObjectHideFlags: 0
@@ -3542,8 +3559,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc87feed144e14bab838f28dc4fec39c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waypoNames: 
-  waypoNameStrings: []
   MenuButtonPF: {fileID: 1348476042403918, guid: 75df25727a496485caca4a3dbf3671b5,
     type: 2}
 --- !u!1 &1857640435
