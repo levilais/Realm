@@ -48,11 +48,6 @@ public class ViewManager : MonoBehaviour {
 
         bool skipAddingToNavHistory = false;
 
-        if (fromMenu.name == "CreateDisplayView")
-        {
-            skipAddingToNavHistory = true;
-        }
-
         string targetMenu;
         switch (toMenu) {
             case "Back":

@@ -78,7 +78,8 @@ public class ViewController : MonoBehaviour {
         Position_Display,
         Adjust_Display,
         Image_Select,
-        Display_Info
+        Display_Info,
+        Undo
     };
 
     public enum ViewMenuType {

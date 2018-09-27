@@ -1332,8 +1332,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1964326983}
-        m_MethodName: GoToPreviousSubView
+      - m_Target: {fileID: 1713967903}
+        m_MethodName: PerformSegueToTarget
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2383,8 +2383,9 @@ GameObject:
   - component: {fileID: 800729666}
   - component: {fileID: 800729665}
   - component: {fileID: 800729663}
+  - component: {fileID: 800729664}
   m_Layer: 5
-  m_Name: ChoosePhoto
+  m_Name: Image_Select
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2405,8 +2406,8 @@ RectTransform:
   - {fileID: 1713967902}
   - {fileID: 1122016554}
   - {fileID: 412423888}
-  m_Father: {fileID: 1964326982}
-  m_RootOrder: 1
+  m_Father: {fileID: 1857640436}
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
@@ -2426,16 +2427,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   viewManager: {fileID: 1857640435}
-  menuName: 17
+  menuName: 27
   menuDisplayType: 0
   menuUseType: 0
   subMenuItems: 
   subMenuItemNames: []
   leftButtonName: 5
-  rightButtonName: 11
+  rightButtonName: 16
   hasDynamicMenuButtonTitles: 0
-  hasDynamicHeaderTitle: 0
-  isSubview: 1
+  hasDynamicHeaderTitle: 1
+  isSubview: 0
   headerIcon: {fileID: 390920655}
   headerTitle: {fileID: 1287621252}
   exitButton: {fileID: 543605540}
@@ -2448,6 +2449,17 @@ MonoBehaviour:
   textfields: 
   MenuButtonPF: {fileID: 1348476042403918, guid: 75df25727a496485caca4a3dbf3671b5,
     type: 2}
+--- !u!114 &800729664
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 800729661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea01661bd03a448e0b20f2ce44beeb0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &800729665
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4620,8 +4632,9 @@ GameObject:
   - component: {fileID: 1273800404}
   - component: {fileID: 1273800403}
   - component: {fileID: 1273800402}
+  - component: {fileID: 1273800405}
   m_Layer: 5
-  m_Name: PositionDisplay
+  m_Name: Adjust_Display
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4636,14 +4649,14 @@ RectTransform:
   m_GameObject: {fileID: 1273800400}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.0000019, y: 1.0000019, z: 1.0000019}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1471855706}
   - {fileID: 110559823}
   - {fileID: 1241639178}
   - {fileID: 1642883334}
-  m_Father: {fileID: 1964326982}
-  m_RootOrder: 0
+  m_Father: {fileID: 1857640436}
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
@@ -4663,16 +4676,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   viewManager: {fileID: 1857640435}
-  menuName: 17
+  menuName: 26
   menuDisplayType: 0
   menuUseType: 0
-  subMenuItems: 1200000013000000140000001500000016000000
+  subMenuItems: 12000000130000001400000015000000160000001d000000
   subMenuItemNames: []
   leftButtonName: 5
-  rightButtonName: 11
+  rightButtonName: 16
   hasDynamicMenuButtonTitles: 0
-  hasDynamicHeaderTitle: 0
-  isSubview: 1
+  hasDynamicHeaderTitle: 1
+  isSubview: 0
   headerIcon: {fileID: 1770079829}
   headerTitle: {fileID: 870580263}
   exitButton: {fileID: 1125902900}
@@ -4720,6 +4733,17 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1273800400}
+--- !u!114 &1273800405
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1273800400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f48fae5f47d1f4ea7b1cdbea1fca6784, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1287621252
 GameObject:
   m_ObjectHideFlags: 0
@@ -5394,8 +5418,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1964326983}
-        m_MethodName: ProceedSequentially
+      - m_Target: {fileID: 1642883335}
+        m_MethodName: PerformSegueToTarget
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5601,8 +5625,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1964326983}
-        m_MethodName: GoToPreviousSubView
+      - m_Target: {fileID: 110559824}
+        m_MethodName: PerformSegueToTarget
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6243,7 +6267,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1964326983}
+      - m_Target: {fileID: 0}
         m_MethodName: ProceedSequentially
         m_Mode: 1
         m_Arguments:
@@ -6541,7 +6565,8 @@ RectTransform:
   - {fileID: 238710345}
   - {fileID: 1659799473}
   - {fileID: 1232175854}
-  - {fileID: 1964326982}
+  - {fileID: 1273800401}
+  - {fileID: 800729662}
   m_Father: {fileID: 2094167647}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6881,59 +6906,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ShowMaskGraphic: 0
---- !u!1 &1964326981
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 1964326982}
-  - component: {fileID: 1964326983}
-  m_Layer: 5
-  m_Name: CreateDisplayView
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!224 &1964326982
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1964326981}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1273800401}
-  - {fileID: 800729662}
-  m_Father: {fileID: 1857640436}
-  m_RootOrder: 11
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1964326983
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1964326981}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: be47977611803462a99304eca1fef1e0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  subViews:
-  - {fileID: 1782976761}
-  - {fileID: 1273800400}
-  - {fileID: 800729661}
-  activeSubView: 0
-  confirmImage: {fileID: 359830197}
 --- !u!114 &1967288792 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114296890049413974, guid: 5f154d1e48a6644cb85dc783c768be38,
