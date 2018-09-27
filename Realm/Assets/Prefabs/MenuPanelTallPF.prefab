@@ -163,7 +163,6 @@ GameObject:
   - component: {fileID: 224822104036941524}
   - component: {fileID: 222742176535404918}
   - component: {fileID: 114645669254761716}
-  - component: {fileID: 114382335595939780}
   - component: {fileID: 114960726303343858}
   - component: {fileID: 114539414079749816}
   m_Layer: 5
@@ -677,6 +676,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menuPanelObject: {fileID: 1468161162971492}
+  title: 
+  imageName: 
+  navTarget: 
+  rObject:
+    title: Default
+    imageName: Default
+    hasBeenPlaced: 0
+    rPoint:
+      rx: 0
+      ry: 0
+      rz: 0
+    rObjectType: 0
 --- !u!114 &114367076756879018
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -718,17 +729,6 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!114 &114382335595939780
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1468161162971492}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 00194dd17f7b74c95bbf782f60091715, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114508965327994666
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -833,6 +833,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menuPanelObject: {fileID: 1468161162971492}
+  title: 
+  imageName: 
+  navTarget: 
+  rObject:
+    title: Default
+    imageName: Default
+    hasBeenPlaced: 0
+    rPoint:
+      rx: 0
+      ry: 0
+      rz: 0
+    rObjectType: 0
 --- !u!114 &114775805485780232
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1097,24 +1109,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ef20d02c810d4fddb4cf9501960e6be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  menuManager: {fileID: 0}
+  viewManager: {fileID: 0}
   menuName: 4
   menuDisplayType: 2
   menuUseType: 1
   subMenuItems: 03000000
-  nextButtonExists: 0
-  nextButtonCustomTitle: 
-  backButtonExists: 1
+  subMenuItemNames: []
+  leftButtonName: 16
+  rightButtonName: 16
+  hasDynamicMenuButtonTitles: 0
+  isSubview: 0
   headerIcon: {fileID: 1990666886417328}
   headerTitle: {fileID: 1120530855968380}
   exitButton: {fileID: 1982221164077992}
   leftButton: {fileID: 1514119047190392}
   middleButtons: {fileID: 0}
   rightButton: {fileID: 1223511075719466}
-  leftButtonShort: {fileID: 0}
-  leftButtonTitle: {fileID: 0}
-  rightButtonShort: {fileID: 0}
-  rightButtonTitle: {fileID: 0}
   messageText: {fileID: 0}
   headerMessageText: {fileID: 1799375359735846}
   inputScrollView: {fileID: 0}

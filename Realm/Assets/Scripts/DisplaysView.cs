@@ -37,7 +37,7 @@ public class DisplaysView : MonoBehaviour {
         MenuButton menuButton = newMenuButton.GetComponent<MenuButton>();
 
         // "PlacementView" will need to be a Display creation secquence
-        menuButton.InitializeButtonProperties("Create", "New", "PlacementView");
+        menuButton.InitializeButtonProperties("Create", "New", "CreateDisplayView");
         newMenuButton.transform.parent = transform.GetComponentInChildren<GridLayoutGroup>().transform;
         menuButton.menuPanelObject = gameObject;
 

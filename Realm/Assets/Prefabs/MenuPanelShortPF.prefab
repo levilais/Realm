@@ -72,7 +72,6 @@ GameObject:
   - component: {fileID: 224896674089399406}
   - component: {fileID: 222256601081141804}
   - component: {fileID: 114777934288401688}
-  - component: {fileID: 114136923927602062}
   - component: {fileID: 114863273118564482}
   m_Layer: 5
   m_Name: MenuPanelShortPF
@@ -201,17 +200,6 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!114 &114136923927602062
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1556828591134974}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 00194dd17f7b74c95bbf782f60091715, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114246177573277762
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -284,6 +272,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menuPanelObject: {fileID: 1556828591134974}
+  title: 
+  imageName: 
+  navTarget: 
+  rObject:
+    title: Default
+    imageName: Default
+    hasBeenPlaced: 0
+    rPoint:
+      rx: 0
+      ry: 0
+      rz: 0
+    rObjectType: 0
 --- !u!114 &114296890049413974
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -296,6 +296,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menuPanelObject: {fileID: 1556828591134974}
+  title: 
+  imageName: 
+  navTarget: 
+  rObject:
+    title: Default
+    imageName: Default
+    hasBeenPlaced: 0
+    rPoint:
+      rx: 0
+      ry: 0
+      rz: 0
+    rObjectType: 0
 --- !u!114 &114317517439364478
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -451,8 +463,11 @@ MonoBehaviour:
   menuDisplayType: 1
   menuUseType: 0
   subMenuItems: 0100000002000000
-  rightButtonExists: 1
-  backButtonExists: 0
+  subMenuItemNames: []
+  leftButtonName: 16
+  rightButtonName: 16
+  hasDynamicMenuButtonTitles: 0
+  isSubview: 0
   headerIcon: {fileID: 0}
   headerTitle: {fileID: 0}
   exitButton: {fileID: 0}

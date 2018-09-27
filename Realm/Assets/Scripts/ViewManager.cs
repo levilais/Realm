@@ -48,7 +48,7 @@ public class ViewManager : MonoBehaviour {
 
         bool skipAddingToNavHistory = false;
 
-        if (fromMenu.name == "Anchor")
+        if (fromMenu.name == "CreateDisplayView")
         {
             skipAddingToNavHistory = true;
         }

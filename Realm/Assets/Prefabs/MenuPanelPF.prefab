@@ -249,7 +249,6 @@ GameObject:
   - component: {fileID: 224053630600986148}
   - component: {fileID: 222703522854565546}
   - component: {fileID: 114149109138556532}
-  - component: {fileID: 114332209190581050}
   - component: {fileID: 114078931295821356}
   m_Layer: 5
   m_Name: MenuPanelPF
@@ -269,24 +268,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ef20d02c810d4fddb4cf9501960e6be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  menuManager: {fileID: 0}
+  viewManager: {fileID: 0}
   menuName: 0
   menuDisplayType: 0
   menuUseType: 0
   subMenuItems: 0100000002000000
-  nextButtonExists: 0
-  nextButtonCustomTitle: 
-  backButtonExists: 0
+  subMenuItemNames: []
+  leftButtonName: 16
+  rightButtonName: 16
+  hasDynamicMenuButtonTitles: 0
+  isSubview: 0
   headerIcon: {fileID: 1052923869254122}
   headerTitle: {fileID: 1242843605454100}
   exitButton: {fileID: 1954401693607682}
   leftButton: {fileID: 1109017853499300}
   middleButtons: {fileID: 1783747354644272}
   rightButton: {fileID: 1857798851826048}
-  leftButtonShort: {fileID: 0}
-  leftButtonTitle: {fileID: 0}
-  rightButtonShort: {fileID: 0}
-  rightButtonTitle: {fileID: 0}
   messageText: {fileID: 0}
   headerMessageText: {fileID: 0}
   inputScrollView: {fileID: 0}
@@ -482,17 +479,6 @@ MonoBehaviour:
   m_Spacing: {x: -10, y: 0}
   m_Constraint: 2
   m_ConstraintCount: 1
---- !u!114 &114332209190581050
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1992899094733406}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 00194dd17f7b74c95bbf782f60091715, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114388833297093084
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -822,6 +808,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menuPanelObject: {fileID: 1992899094733406}
+  title: 
+  imageName: 
+  navTarget: 
+  rObject:
+    title: Default
+    imageName: Default
+    hasBeenPlaced: 0
+    rPoint:
+      rx: 0
+      ry: 0
+      rz: 0
+    rObjectType: 0
 --- !u!114 &114898945087062088
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -861,6 +859,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menuPanelObject: {fileID: 1992899094733406}
+  title: 
+  imageName: 
+  navTarget: 
+  rObject:
+    title: Default
+    imageName: Default
+    hasBeenPlaced: 0
+    rPoint:
+      rx: 0
+      ry: 0
+      rz: 0
+    rObjectType: 0
 --- !u!114 &114968264624048150
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -18,6 +18,7 @@ public class ViewController : MonoBehaviour {
     public ViewName rightButtonName = ViewName.None;
 
     public bool hasDynamicMenuButtonTitles;
+    public bool isSubview = false;
 
     [Space(6)]
     [Header("Header Objects")]
@@ -62,7 +63,13 @@ public class ViewController : MonoBehaviour {
         Exit,
         Realm,
         PlacementView,
-        None
+        None,
+        CreateDisplayView,
+        Bigger,
+        Smaller,
+        RotateR,
+        RotateL,
+        Move
     };
 
     public enum ViewMenuType {
@@ -95,7 +102,9 @@ public class ViewController : MonoBehaviour {
 
     void Start()
     {
-        transform.name = menuName.ToString();
+        if (!isSubview) {
+            transform.name = menuName.ToString();
+        }
         InstantiateMenuObject();
     }
 
