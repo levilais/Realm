@@ -18,6 +18,8 @@ public class ViewController : MonoBehaviour {
     public ViewName rightButtonName = ViewName.None;
 
     public bool hasDynamicMenuButtonTitles;
+    public bool hasDynamicHeaderTitle;
+
     public bool isSubview = false;
 
     [Space(6)]
@@ -69,7 +71,9 @@ public class ViewController : MonoBehaviour {
         Smaller,
         RotateR,
         RotateL,
-        Move
+        Move,
+        Image,
+        Display_Detail
     };
 
     public enum ViewMenuType {
@@ -114,12 +118,6 @@ public class ViewController : MonoBehaviour {
     }
 
     public void InstantiateMenuObject() {
-        //if (rightButtonName != ViewName.None) {
-        //    rightButton.SetActive(true);
-        //} else {
-        //    rightButton.SetActive(false);
-        //}
-
         PopulateButtons();
         PopulateHeader();
         SetScrollviewProperties();
@@ -166,8 +164,10 @@ public class ViewController : MonoBehaviour {
 
     void PopulateHeader()
     {
-        headerIcon.GetComponent<Image>().sprite = Resources.Load<Sprite>("Icons/" + menuName.ToString() + "Icon");
-        headerTitle.GetComponent<Text>().text = menuName.ToString();
+        if (!hasDynamicHeaderTitle) {
+            headerIcon.GetComponent<Image>().sprite = Resources.Load<Sprite>("Icons/" + menuName.ToString() + "Icon");
+            headerTitle.GetComponent<Text>().text = menuName.ToString();
+        }
     }
 
     void PopulateButtons()
