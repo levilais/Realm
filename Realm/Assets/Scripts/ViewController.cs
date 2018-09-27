@@ -48,15 +48,16 @@ public class ViewController : MonoBehaviour {
     [Header("Prefabs")]
     public GameObject MenuButtonPF;
 
-    public enum ViewName { 
+    public enum ViewName
+    {
         Welcome,
         Enter,
-        Menu, 
-        Profile, 
-        Displays, 
+        Menu,
+        Profile,
+        Displays,
         Back,
         Info,
-        New, 
+        New,
         Edit,
         Waypos,
         Anchor,
@@ -64,7 +65,7 @@ public class ViewController : MonoBehaviour {
         BEGIN,
         Exit,
         Realm,
-        PlacementView,
+        Place_Waypo,
         None,
         CreateDisplayView,
         Bigger,
@@ -73,7 +74,11 @@ public class ViewController : MonoBehaviour {
         RotateL,
         Move,
         Image,
-        Display_Detail
+        Display_Detail,
+        Position_Display,
+        Adjust_Display,
+        Image_Select,
+        Display_Info
     };
 
     public enum ViewMenuType {

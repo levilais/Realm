@@ -45,7 +45,7 @@ public class DisplayDetailView : MonoBehaviour {
                     menuButton.InitializeButtonProperties("Image", "Image", "Image_Select");
                     break;
                 case 3:
-                    menuButton.InitializeButtonProperties("Details", "Details", "Display_Details");
+                    menuButton.InitializeButtonProperties("Details", "Details", "Display_Info");
                     break;
                 case 4:
                     // Delete_Popup will have to trigger a popup to confirm, the "back" nav, and handle the delete function

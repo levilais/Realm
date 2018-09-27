@@ -71,7 +71,7 @@ public class WayposView : MonoBehaviour {
             newMenuButton.transform.parent = transform.GetComponentInChildren<GridLayoutGroup>().transform;
             if (!waypo.hasBeenPlaced)
             {
-                menuButton.navTarget = "PlaceWaypoView";
+                menuButton.navTarget = "Place_Waypo";
             } else {
                 menuButton.navTarget = "waypo.Title";
             }
