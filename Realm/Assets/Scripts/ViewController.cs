@@ -102,7 +102,8 @@ public class ViewController : MonoBehaviour {
         Company_Name,
         Contact_Email,
         Contact_Phone,
-        Dumby
+        Display_Name,
+        Display_ID
     }
 
     string menuItemTitleString(TextfieldMenuItemTitle textfieldMenuItemTitle)

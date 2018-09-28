@@ -10,6 +10,7 @@ public class DisplaysView : MonoBehaviour {
 
     public void OnEnable()
     {
+        Debug.Log("ActiveObject title on enable: " + RealmManager.realmManager.activeObject.title);
         PopulateDynamicButtons();
     }
 
@@ -21,17 +22,17 @@ public class DisplaysView : MonoBehaviour {
     private void RemoveDynamicButtons()
     {
         GameObject menuButtonsParent = transform.GetComponentInChildren<GridLayoutGroup>().gameObject;
-        Debug.Log("menuButtonsParent name: " + menuButtonsParent.name);
 
         foreach (Transform childObject in menuButtonsParent.transform)
         {
-            Debug.Log("childObject name: " + childObject.name);
             Destroy(childObject.gameObject);
         }
     }
 
     private void PopulateDynamicButtons()
     {
+        Debug.Log("displays count " + RealmManager.realmManager.displays.Count);
+
         // create "New" button
         GameObject newMenuButton = (GameObject)Instantiate(MenuButtonPF, transform);
         MenuButton menuButton = newMenuButton.GetComponent<MenuButton>();
@@ -41,6 +42,12 @@ public class DisplaysView : MonoBehaviour {
         newMenuButton.transform.parent = transform.GetComponentInChildren<GridLayoutGroup>().transform;
         menuButton.menuPanelObject = gameObject;
 
+        RObject createButton = new RObject();
+        createButton.displayNumber = RealmManager.realmManager.lastDisplayNumber + 1;
+        createButton.title = "Display " + (createButton.displayNumber).ToString();
+        createButton.rObjectType = RObject.RObjectType.Display;
+        menuButton.rObject = createButton;
+
         // populate the rest
         if (RealmManager.realmManager.displays.Count > 0) {
             for (int i = 0; i < RealmManager.realmManager.displays.Count; i++)
@@ -49,11 +56,24 @@ public class DisplaysView : MonoBehaviour {
                 RObject display = RealmManager.realmManager.displays[i];
                 GameObject newDisplayButton = (GameObject)Instantiate(MenuButtonPF, transform);
                 MenuButton displayMenuButton = newDisplayButton.GetComponent<MenuButton>();
-                displayMenuButton.InitializeButtonProperties(display.title, display.imageName, display.title);
+
+                string buttonImageName;
+
+                if (!display.imageExists)
+                {
+                    buttonImageName = "Displays";
+                }
+                else
+                {
+                    buttonImageName = display.imageName;
+                }
+
+                displayMenuButton.InitializeButtonProperties(display.title, buttonImageName, display.title);
                 newDisplayButton.transform.parent = transform.GetComponentInChildren<GridLayoutGroup>().transform;
-                displayMenuButton.navTarget = display.title;
+                displayMenuButton.navTarget = "Display_Detail";
                 displayMenuButton.menuPanelObject = gameObject;
                 displayMenuButton.rObject = display;
+                displayMenuButton.rObject.rObjectType = RObject.RObjectType.Display;
             }
         }
     }

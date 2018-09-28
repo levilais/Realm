@@ -13,10 +13,10 @@ public class RealmManager : MonoBehaviour {
     public List<RObject> waypos;
     public List<RObject> displays;
     public RObject activeObject;
+    public double lastDisplayNumber = 0;
 
     private void Awake()
     {
-
         //Check if instance already exists
         if (realmManager == null)
             //if not, set instance to this
@@ -34,25 +34,15 @@ public class RealmManager : MonoBehaviour {
         anchor = new RObject();
 
         if (RealmData.eraseModeActive) {
-            RealmData.SaveWaypos();
+            RealmData.SaveData();
         }
 
         RealmData.LoadRealmData();
     }
 
-    public void RegisterActiveObject(System.Guid rObjectUID)
+    public void RegisterActiveObject(RObject rObject)
     {
-        int i = 0;
-        Debug.Log("trying to find match to register");
-        foreach (RObject waypo in RealmManager.realmManager.waypos)
-        {
-            if (waypo.uid == rObjectUID)
-            {
-                RealmManager.realmManager.activeObject = RealmManager.realmManager.waypos[i];
-                Debug.Log("object registered");
-            }
-            i += 1;
-        }
+        RealmManager.realmManager.activeObject = rObject;
     }
 }
 

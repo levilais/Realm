@@ -5,8 +5,11 @@ using UnityEngine.UI;
 
 public class AdjustDisplayView : MonoBehaviour {
 
+    private RObject activeObject;
+                                               
 	private void OnEnable()
     {
+        activeObject = RealmManager.realmManager.activeObject;
         PopulateHeader();
     }
  
@@ -15,6 +18,6 @@ public class AdjustDisplayView : MonoBehaviour {
     //We'll need to set the activeObject in the DisplaysView when the button is pressed. That's how we'll determine the title, too.
     ViewController viewController = transform.GetComponent<ViewController>();
     viewController.headerIcon.GetComponent<Image>().sprite = Resources.Load<Sprite>("Icons/DisplaysIcon");
-        viewController.headerTitle.GetComponent<Text>().text = "Adjust Display";
+        viewController.headerTitle.GetComponent<Text>().text = "Adjust " + activeObject.title;
     }
 }

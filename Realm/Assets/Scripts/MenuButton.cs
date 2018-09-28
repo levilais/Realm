@@ -42,7 +42,20 @@ public class MenuButton : MonoBehaviour
 
     public void PerformSegueToTarget()
     {
-        RealmManager.realmManager.RegisterActiveObject(rObject.uid);
+        if (rObject.rObjectType != RObject.RObjectType.Default)
+        {
+            RealmManager.realmManager.RegisterActiveObject(rObject);
+            CreateDisplayIfNecessary();
+        }
         ViewManager.viewManager.performSegue(navTarget, menuPanelObject);
+    }
+
+    public void CreateDisplayIfNecessary() {
+        if (title == "Create") {
+            Debug.Log("creating...");
+            RealmManager.realmManager.displays.Add(rObject);
+            RealmManager.realmManager.lastDisplayNumber = rObject.displayNumber;
+            RealmData.SaveData();
+        } 
     }
 }

@@ -7,8 +7,11 @@ public class RObject {
     public string title;
     public string imageName;
     public System.Guid uid;
-    public bool hasBeenPlaced;
+    public double displayNumber;
     public RPoint rPoint;
+
+    public bool hasBeenPlaced;
+    public bool imageExists;
 
     public enum RObjectType {Default, Waypo, Display, Anchor}
     public RObjectType rObjectType;
@@ -18,6 +21,7 @@ public class RObject {
         imageName = "Default";
         uid = System.Guid.NewGuid();
         hasBeenPlaced = false;
+        imageExists = false;
         rPoint = new RPoint();
         rObjectType = RObjectType.Default;
     }
@@ -56,7 +60,7 @@ public class RObject {
         }
 
         RealmManager.realmManager.activeObject = new RObject();
-        RealmData.SaveWaypos();
+        RealmData.SaveData();
     }
 }
 
