@@ -7,6 +7,8 @@ public class RealmManager : MonoBehaviour {
     [Header("Instance Declaration")]
     public static RealmManager realmManager = null;
 
+    public Realm realm;
+
     public bool anchorExists;
     public string realmName;
     public RObject anchor;
@@ -33,11 +35,11 @@ public class RealmManager : MonoBehaviour {
         anchorExists = false;
         anchor = new RObject();
 
-        if (RealmData.eraseModeActive) {
-            RealmData.SaveData();
+        if (DataManager.eraseModeActive) {
+            DataManager.SaveData();
         }
 
-        RealmData.LoadRealmData();
+        DataManager.LoadData();
     }
 
     public void RegisterActiveObject(RObject rObject)

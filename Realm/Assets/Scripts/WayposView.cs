@@ -18,7 +18,7 @@ public class WayposView : MonoBehaviour {
         else
         {
             CreateDefaultWaypos();
-            RealmData.SaveData();
+            DataManager.SaveData();
         }
         PopulateDynamicButtons();
     }

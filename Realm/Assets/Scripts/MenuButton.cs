@@ -55,7 +55,7 @@ public class MenuButton : MonoBehaviour
             Debug.Log("creating...");
             RealmManager.realmManager.displays.Add(rObject);
             RealmManager.realmManager.lastDisplayNumber = rObject.displayNumber;
-            RealmData.SaveData();
+            DataManager.SaveData();
         } 
     }
 }

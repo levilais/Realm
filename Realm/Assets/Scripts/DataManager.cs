@@ -5,7 +5,7 @@ using System.Collections;
 using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine;
 
-public static class RealmData
+public static class DataManager
 {
 
     // To erase persistent data: manually change this to "true", run the app, stop the app, change it back to "false".
@@ -13,6 +13,7 @@ public static class RealmData
 
     public static List<RObject> WaypoObjects; // setup to check if they exist and if they do update RealmManager.realmManager
     public static List<RObject> DisplayObjects;
+    public static Realm RealmData;
 
     public static void SaveData()
     {
@@ -26,6 +27,10 @@ public static class RealmData
             FileStream displaysFile = File.Create(Application.persistentDataPath + "/displays.gd");
             binaryFormatter.Serialize(displaysFile, new List<RObject>());
             displaysFile.Close();
+
+            FileStream realmFile = File.Create(Application.persistentDataPath + "/realmData.gd");
+            binaryFormatter.Serialize(realmFile, new Realm());
+            realmFile.Close();
         } else {
             FileStream wayposFile = File.Create(Application.persistentDataPath + "/waypos.gd");
             binaryFormatter.Serialize(wayposFile, RealmManager.realmManager.waypos);
@@ -34,10 +39,14 @@ public static class RealmData
             FileStream displaysFile = File.Create(Application.persistentDataPath + "/displays.gd");
             binaryFormatter.Serialize(displaysFile, RealmManager.realmManager.displays);
             displaysFile.Close();
+
+            FileStream realmFile = File.Create(Application.persistentDataPath + "/realmData.gd");
+            binaryFormatter.Serialize(realmFile, RealmManager.realmManager.realm);
+            realmFile.Close();
         }
     }
 
-    public static void LoadRealmData()
+    public static void LoadData()
     {
         if (!eraseModeActive) {
             BinaryFormatter binaryFormatter = new BinaryFormatter();
@@ -58,6 +67,15 @@ public static class RealmData
                 displaysFile.Close();
 
                 RealmManager.realmManager.displays = DisplayObjects;
+            }
+
+            if (File.Exists(Application.persistentDataPath + "/realmData.gd"))
+            {
+                FileStream realmFile = File.Open(Application.persistentDataPath + "/realmData.gd", FileMode.Open);
+                RealmData = (Realm)binaryFormatter.Deserialize(realmFile);
+                realmFile.Close();
+
+                RealmManager.realmManager.realm = RealmData;
             }
         }
     }
