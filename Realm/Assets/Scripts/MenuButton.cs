@@ -53,8 +53,8 @@ public class MenuButton : MonoBehaviour
     public void CreateDisplayIfNecessary() {
         if (title == "Create") {
             Debug.Log("creating...");
-            RealmManager.realmManager.displays.Add(rObject);
-            RealmManager.realmManager.lastDisplayNumber = rObject.displayNumber;
+            RealmManager.realmManager.realm.displays.Add(rObject);
+            RealmManager.realmManager.realm.lastDisplayNumber = rObject.displayNumber;
             DataManager.SaveData();
         } 
     }

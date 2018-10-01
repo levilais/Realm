@@ -43,9 +43,9 @@ public class RObject {
 
                 int i = 0;
                 Debug.Log("trying to find match");
-                foreach (RObject waypo in RealmManager.realmManager.waypos) {
+                foreach (RObject waypo in RealmManager.realmManager.realm.waypos) {
                     if (waypo.uid == RealmManager.realmManager.activeObject.uid) {
-                        RealmManager.realmManager.waypos[i] = RealmManager.realmManager.activeObject;
+                        RealmManager.realmManager.realm.waypos[i] = RealmManager.realmManager.activeObject;
                         Debug.Log("match found");
                     }
                     i += 1;

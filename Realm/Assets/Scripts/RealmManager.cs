@@ -8,14 +8,7 @@ public class RealmManager : MonoBehaviour {
     public static RealmManager realmManager = null;
 
     public Realm realm;
-
-    public bool anchorExists;
-    public string realmName;
-    public RObject anchor;
-    public List<RObject> waypos;
-    public List<RObject> displays;
     public RObject activeObject;
-    public double lastDisplayNumber = 0;
 
     private void Awake()
     {
@@ -30,10 +23,6 @@ public class RealmManager : MonoBehaviour {
 
         //Sets this to not be destroyed when reloading scene
         DontDestroyOnLoad(gameObject);
-
-        // Will use persistent storage / database to determine if Anchor exists
-        anchorExists = false;
-        anchor = new RObject();
 
         if (DataManager.eraseModeActive) {
             DataManager.SaveData();

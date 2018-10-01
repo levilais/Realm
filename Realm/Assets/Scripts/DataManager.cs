@@ -33,11 +33,11 @@ public static class DataManager
             realmFile.Close();
         } else {
             FileStream wayposFile = File.Create(Application.persistentDataPath + "/waypos.gd");
-            binaryFormatter.Serialize(wayposFile, RealmManager.realmManager.waypos);
+            binaryFormatter.Serialize(wayposFile, RealmManager.realmManager.realm.waypos);
             wayposFile.Close();
 
             FileStream displaysFile = File.Create(Application.persistentDataPath + "/displays.gd");
-            binaryFormatter.Serialize(displaysFile, RealmManager.realmManager.displays);
+            binaryFormatter.Serialize(displaysFile, RealmManager.realmManager.realm.displays);
             displaysFile.Close();
 
             FileStream realmFile = File.Create(Application.persistentDataPath + "/realmData.gd");
@@ -57,7 +57,7 @@ public static class DataManager
                 WaypoObjects = (List<RObject>)binaryFormatter.Deserialize(wayposFile);
                 wayposFile.Close();
 
-                RealmManager.realmManager.waypos = WaypoObjects;
+                RealmManager.realmManager.realm.waypos = WaypoObjects;
             }
 
             if (File.Exists(Application.persistentDataPath + "/displays.gd"))
@@ -66,7 +66,7 @@ public static class DataManager
                 DisplayObjects = (List<RObject>)binaryFormatter.Deserialize(displaysFile);
                 displaysFile.Close();
 
-                RealmManager.realmManager.displays = DisplayObjects;
+                RealmManager.realmManager.realm.displays = DisplayObjects;
             }
 
             if (File.Exists(Application.persistentDataPath + "/realmData.gd"))

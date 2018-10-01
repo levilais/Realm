@@ -55,7 +55,7 @@ public class PlaceWaypoView : MonoBehaviour {
                 break;
             case 4:
                 confirmImage.SetActive(false);
-                RealmManager.realmManager.anchorExists = true;
+                RealmManager.realmManager.realm.anchorExists = true;
                 string toMenu;
                 if (ViewManager.viewManager.navigationHistory.Count == 0) {
                     toMenu = "BEGIN";

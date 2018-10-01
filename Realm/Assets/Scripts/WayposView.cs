@@ -10,10 +10,10 @@ public class WayposView : MonoBehaviour {
 
     public void OnEnable()
     {
-        if (RealmManager.realmManager.waypos.Count > 0)
+        if (RealmManager.realmManager.realm.waypos.Count > 0)
         {
             // do something with existing waypose
-            Debug.Log(RealmManager.realmManager.waypos.Count + " waypos already exist");
+            Debug.Log(RealmManager.realmManager.realm.waypos.Count + " waypos already exist");
         }
         else
         {
@@ -30,9 +30,9 @@ public class WayposView : MonoBehaviour {
 
     private void CreateDefaultWaypos()
     {
-        if (RealmManager.realmManager.waypos.Count <= 0)
+        if (RealmManager.realmManager.realm.waypos.Count <= 0)
         {
-            RealmManager.realmManager.waypos = new List<RObject>();
+            RealmManager.realmManager.realm.waypos = new List<RObject>();
             int i = 0;
             while (i < 5)
             {
@@ -42,7 +42,7 @@ public class WayposView : MonoBehaviour {
                 newWaypo.title = title;
                 newWaypo.imageName = "New";
                 newWaypo.rObjectType = RObject.RObjectType.Waypo;
-                RealmManager.realmManager.waypos.Add(newWaypo);
+                RealmManager.realmManager.realm.waypos.Add(newWaypo);
                 i += 1;
             }
         }
@@ -61,10 +61,10 @@ public class WayposView : MonoBehaviour {
 
     private void PopulateDynamicButtons()
     {
-        for (int i = 0; i < RealmManager.realmManager.waypos.Count; i++)
+        for (int i = 0; i < RealmManager.realmManager.realm.waypos.Count; i++)
         {
             // Create new instances of our prefab until we've created as many as we specified
-            RObject waypo = RealmManager.realmManager.waypos[i];
+            RObject waypo = RealmManager.realmManager.realm.waypos[i];
             GameObject newMenuButton = (GameObject)Instantiate(MenuButtonPF, transform);
             MenuButton menuButton = newMenuButton.GetComponent<MenuButton>();
             menuButton.InitializeButtonProperties(waypo.title, waypo.imageName, waypo.title);

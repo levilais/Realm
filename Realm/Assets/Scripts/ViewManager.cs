@@ -62,7 +62,7 @@ public class ViewManager : MonoBehaviour {
                 skipAddingToNavHistory = true;
                 break;
             case "BEGIN":
-                if (RealmManager.realmManager.anchorExists) {
+                if (RealmManager.realmManager.realm.anchorExists) {
                     targetMenu = "BEGIN";
                 } else {
                     // will be "Intro" and do some logic to determine how built-out the realm is

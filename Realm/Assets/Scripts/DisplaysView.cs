@@ -31,7 +31,7 @@ public class DisplaysView : MonoBehaviour {
 
     private void PopulateDynamicButtons()
     {
-        Debug.Log("displays count " + RealmManager.realmManager.displays.Count);
+        Debug.Log("displays count " + RealmManager.realmManager.realm.displays.Count);
 
         // create "New" button
         GameObject newMenuButton = (GameObject)Instantiate(MenuButtonPF, transform);
@@ -43,17 +43,17 @@ public class DisplaysView : MonoBehaviour {
         menuButton.menuPanelObject = gameObject;
 
         RObject createButton = new RObject();
-        createButton.displayNumber = RealmManager.realmManager.lastDisplayNumber + 1;
+        createButton.displayNumber = RealmManager.realmManager.realm.lastDisplayNumber + 1;
         createButton.title = "Display " + (createButton.displayNumber).ToString();
         createButton.rObjectType = RObject.RObjectType.Display;
         menuButton.rObject = createButton;
 
         // populate the rest
-        if (RealmManager.realmManager.displays.Count > 0) {
-            for (int i = 0; i < RealmManager.realmManager.displays.Count; i++)
+        if (RealmManager.realmManager.realm.displays.Count > 0) {
+            for (int i = 0; i < RealmManager.realmManager.realm.displays.Count; i++)
             {
                 // Create new instances of our prefab until we've created as many as we specified
-                RObject display = RealmManager.realmManager.displays[i];
+                RObject display = RealmManager.realmManager.realm.displays[i];
                 GameObject newDisplayButton = (GameObject)Instantiate(MenuButtonPF, transform);
                 MenuButton displayMenuButton = newDisplayButton.GetComponent<MenuButton>();
 
