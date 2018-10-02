@@ -483,13 +483,16 @@ MonoBehaviour:
   imageName: 
   navTarget: 
   rObject:
-    title: Default
+    name: Default
     imageName: Default
-    hasBeenPlaced: 0
+    displayID: Default
+    displayNumber: 0
     rPoint:
       rx: 0
       ry: 0
       rz: 0
+    hasBeenPlaced: 0
+    imageExists: 0
     rObjectType: 0
 --- !u!114 &110559825
 MonoBehaviour:
@@ -908,27 +911,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84fb88a882ead4e8d90e452685a7f0c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  anchorExists: 0
-  realmName: 
-  anchor:
-    title: Default
-    imageName: Default
-    hasBeenPlaced: 0
-    rPoint:
-      rx: 0
-      ry: 0
-      rz: 0
-    rObjectType: 0
-  waypos: []
-  displays: []
+  realm:
+    anchorExists: 0
+    realmName: Default
+    accountManagerName: Default
+    companyName: Default
+    contactEmail: Default
+    contactPhone: Default
+    anchor:
+      name: Default
+      imageName: Default
+      displayID: Default
+      displayNumber: 0
+      rPoint:
+        rx: 0
+        ry: 0
+        rz: 0
+      hasBeenPlaced: 0
+      imageExists: 0
+      rObjectType: 0
+    waypos: []
+    displays: []
+    lastDisplayNumber: 0
   activeObject:
-    title: Default
+    name: Default
     imageName: Default
-    hasBeenPlaced: 0
+    displayID: Default
+    displayNumber: 0
     rPoint:
       rx: 0
       ry: 0
       rz: 0
+    hasBeenPlaced: 0
+    imageExists: 0
     rObjectType: 0
 --- !u!114 &275979522 stripped
 MonoBehaviour:
@@ -1211,13 +1226,16 @@ MonoBehaviour:
   imageName: 
   navTarget: 
   rObject:
-    title: Default
+    name: Default
     imageName: Default
-    hasBeenPlaced: 0
+    displayID: Default
+    displayNumber: 0
     rPoint:
       rx: 0
       ry: 0
       rz: 0
+    hasBeenPlaced: 0
+    imageExists: 0
     rObjectType: 0
 --- !u!114 &412423890
 MonoBehaviour:
@@ -1922,7 +1940,7 @@ GameObject:
   m_Component:
   - component: {fileID: 570906518}
   m_Layer: 5
-  m_Name: TextfieldObj
+  m_Name: Textfield
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2037,7 +2055,7 @@ GameObject:
   - component: {fileID: 635072539}
   - component: {fileID: 635072538}
   m_Layer: 5
-  m_Name: TextField
+  m_Name: TextfieldObj
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5964,13 +5982,16 @@ MonoBehaviour:
   imageName: 
   navTarget: 
   rObject:
-    title: Default
+    name: Default
     imageName: Default
-    hasBeenPlaced: 0
+    displayID: Default
+    displayNumber: 0
     rPoint:
       rx: 0
       ry: 0
       rz: 0
+    hasBeenPlaced: 0
+    imageExists: 0
     rObjectType: 0
 --- !u!114 &1642883336
 MonoBehaviour:
@@ -6600,13 +6621,16 @@ MonoBehaviour:
   imageName: 
   navTarget: 
   rObject:
-    title: Default
+    name: Default
     imageName: Default
-    hasBeenPlaced: 0
+    displayID: Default
+    displayNumber: 0
     rPoint:
       rx: 0
       ry: 0
       rz: 0
+    hasBeenPlaced: 0
+    imageExists: 0
     rObjectType: 0
 --- !u!114 &1713967904
 MonoBehaviour:
@@ -6966,10 +6990,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35f69cde6f33447318163c396df42896, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  textfield: {fileID: 0}
+  textFieldObj: {fileID: 635072535}
   titleText: {fileID: 2113324708}
-  textfield: {fileID: 635072535}
   placeholderText: {fileID: 214195083}
-  menuItemName: 
   currentText: 
 --- !u!224 &1920220589 stripped
 RectTransform:

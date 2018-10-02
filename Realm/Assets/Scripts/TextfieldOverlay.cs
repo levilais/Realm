@@ -5,64 +5,29 @@ using UnityEngine.UI;
 
 public class TextfieldOverlay : MonoBehaviour
 {
+    public Textfield textfield;
+    public GameObject textFieldObj;
+    public GameObject titleText;
+    public GameObject placeholderText;
+    public string currentText;
 
-    public GameObject viewManager;
-    GameObject textfieldOverlay;
-    InputField inputField;
 
-    string textfieldObjectName;
-    bool contentIsAdjustedForKeyboard = false;
-
-    private void Start()
+    private void OnEnable()
     {
-        InitializeObjects();
-        textfieldObjectName = transform.parent.name;
+        titleText.GetComponent<Text>().text = textfield.textFieldTitle;
+        textfield.gameObject.GetComponent<InputField>().text = currentText;
+        placeholderText.GetComponent<Text>().text = textfield.textFieldPlaceholderText;
+        GetComponentInParent<Canvas>().sortingOrder = 2;
     }
 
-    private void InitializeObjects()
+    private void OnDisable()
     {
-        textfieldOverlay = transform.GetComponentInParent<ViewManager>().TextfieldOverlay.gameObject;
-        inputField = transform.GetComponent<InputField>();
-        viewManager = transform.GetComponentInParent<ViewManager>().gameObject;
+        currentText = "";
+        GetComponentInParent<Canvas>().sortingOrder = 0;
     }
 
-    void Update()
+    private void Update()
     {
-        // EDITOR
-#if UNITY_EDITOR
-        if (inputField.isFocused && !contentIsAdjustedForKeyboard)
-        {
-            UpdateText();
-            ShowOverlay();
-        }
-        if (!inputField.enabled && contentIsAdjustedForKeyboard)
-        {
-            HideOverlay();
-        }
-
-        // MOBILE
-#else
-        TouchScreenKeyboard keyboard = inputField.touchScreenKeyboard;
-        if (inputField.touchScreenKeyboard.status == TouchScreenKeyboard.Status.Visible && !contentIsAdjustedForKeyboard) {
-            UpdateText();    
-            ShowOverlay();
-        }
-#endif
-    }
-
-    public void UpdateText() {
-        TextfieldOverlayInitializer textfieldOverlayInitializer = textfieldOverlay.GetComponent<TextfieldOverlayInitializer>();
-        textfieldOverlayInitializer.currentText = inputField.text;
-    }
-
-    public void ShowOverlay() {
-        textfieldOverlay.GetComponent<TextfieldOverlayInitializer>().menuItemName = textfieldObjectName;
-        textfieldOverlay.SetActive(true);
-        contentIsAdjustedForKeyboard = true;
-    }
-
-    public void HideOverlay() {
-        textfieldOverlay.SetActive(false);
-        contentIsAdjustedForKeyboard = false;
+        textFieldObj.GetComponent<InputField>().text = currentText;
     }
 }

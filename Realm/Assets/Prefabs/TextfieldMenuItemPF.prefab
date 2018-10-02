@@ -240,6 +240,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   viewManager: {fileID: 0}
+  textFieldTitle: 
+  textFieldText: 
+  textFieldPlaceholderText: 
 --- !u!114 &114199798068329504
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -272,7 +275,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Enter Company Name...
+  m_Text: 
 --- !u!114 &114353819473438172
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -399,7 +402,8 @@ MonoBehaviour:
   viewManager: {fileID: 0}
   titleText: {fileID: 1931561230391178}
   placeholderText: {fileID: 1238152681400578}
-  textField: {fileID: 1534529058323056}
+  textFieldText: {fileID: 1224344071996422}
+  textField: {fileID: 114058857933366382}
 --- !u!114 &114867518297409750
 MonoBehaviour:
   m_ObjectHideFlags: 1

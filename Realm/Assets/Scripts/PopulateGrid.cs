@@ -11,7 +11,7 @@ public class PopulateGrid : MonoBehaviour
     void Start()
     {
         Populate();
-        ResizeScrollView();
+        //ResizeScrollView();
     }
 
     void Populate()
@@ -94,6 +94,7 @@ public class PopulateGrid : MonoBehaviour
         //    GameObject viewManagerObj = transform.GetComponentInParent<ViewManager>().gameObject;
         //    newTextfieldMenuItemObj.GetComponent<TextfieldMenuItem>().viewManager = viewManagerObj;
         //}
+        ResizeScrollView();
     }
 
     private void ResizeScrollView()
