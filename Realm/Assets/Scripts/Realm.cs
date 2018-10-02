@@ -7,9 +7,10 @@ public class Realm {
 
     public bool anchorExists;
     public string realmName;
+    public string accountManagerName;
     public string companyName;
-    public string email;
-    public string phone;
+    public string contactEmail;
+    public string contactPhone;
     public RObject anchor;
     public List<RObject> waypos;
     public List<RObject> displays;
@@ -19,10 +20,11 @@ public class Realm {
     {
         anchorExists = false;
         realmName = "Default";
+        accountManagerName = "Default";
         companyName = "Default";
-        email = "Default";
-        phone = "Default";
-        RObject anchor = new RObject();
+        contactEmail = "Default";
+        contactPhone = "Default";
+        anchor = new RObject();
         waypos = new List<RObject>();
         displays = new List<RObject>();
         lastDisplayNumber = 0;

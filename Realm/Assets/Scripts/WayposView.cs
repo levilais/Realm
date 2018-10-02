@@ -39,7 +39,7 @@ public class WayposView : MonoBehaviour {
                 RObject newWaypo = new RObject();
                 string waypoNumber = (i + 1).ToString();
                 string title = "WP-" + waypoNumber;
-                newWaypo.title = title;
+                newWaypo.name = title;
                 newWaypo.imageName = "New";
                 newWaypo.rObjectType = RObject.RObjectType.Waypo;
                 RealmManager.realmManager.realm.waypos.Add(newWaypo);
@@ -67,7 +67,7 @@ public class WayposView : MonoBehaviour {
             RObject waypo = RealmManager.realmManager.realm.waypos[i];
             GameObject newMenuButton = (GameObject)Instantiate(MenuButtonPF, transform);
             MenuButton menuButton = newMenuButton.GetComponent<MenuButton>();
-            menuButton.InitializeButtonProperties(waypo.title, waypo.imageName, waypo.title);
+            menuButton.InitializeButtonProperties(waypo.name, waypo.imageName, waypo.name);
             newMenuButton.transform.parent = transform.GetComponentInChildren<GridLayoutGroup>().transform;
             if (!waypo.hasBeenPlaced)
             {

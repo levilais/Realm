@@ -23,7 +23,7 @@ public class DisplayDetailView : MonoBehaviour {
         //We'll need to set the activeObject in the DisplaysView when the button is pressed. That's how we'll determine the title, too.
 
         RObject activeDisplay = RealmManager.realmManager.activeObject;
-        string headerTitle = activeDisplay.title;
+        string headerTitle = activeDisplay.name;
 
         ViewController viewController = transform.GetComponent<ViewController>();
         viewController.headerIcon.GetComponent<Image>().sprite = Resources.Load<Sprite>("Icons/DisplaysIcon");

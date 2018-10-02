@@ -19,7 +19,7 @@ public class DisplayInfoView : MonoBehaviour {
         //We'll need to set the activeObject in the DisplaysView when the button is pressed. That's how we'll determine the title, too.
         ViewController viewController = transform.GetComponent<ViewController>();
         viewController.headerIcon.GetComponent<Image>().sprite = Resources.Load<Sprite>("Icons/DisplaysIcon");
-        viewController.headerTitle.GetComponent<Text>().text = activeObject.title + " Info";
+        viewController.headerTitle.GetComponent<Text>().text = activeObject.name + " Info";
     }
 
 }

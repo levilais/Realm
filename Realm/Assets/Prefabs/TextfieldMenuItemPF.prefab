@@ -399,7 +399,7 @@ MonoBehaviour:
   viewManager: {fileID: 0}
   titleText: {fileID: 1931561230391178}
   placeholderText: {fileID: 1238152681400578}
-  textField: {fileID: 0}
+  textField: {fileID: 1534529058323056}
 --- !u!114 &114867518297409750
 MonoBehaviour:
   m_ObjectHideFlags: 1

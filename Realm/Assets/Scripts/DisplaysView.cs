@@ -10,7 +10,7 @@ public class DisplaysView : MonoBehaviour {
 
     public void OnEnable()
     {
-        Debug.Log("ActiveObject title on enable: " + RealmManager.realmManager.activeObject.title);
+        Debug.Log("ActiveObject title on enable: " + RealmManager.realmManager.activeObject.name);
         PopulateDynamicButtons();
     }
 
@@ -44,7 +44,7 @@ public class DisplaysView : MonoBehaviour {
 
         RObject createButton = new RObject();
         createButton.displayNumber = RealmManager.realmManager.realm.lastDisplayNumber + 1;
-        createButton.title = "Display " + (createButton.displayNumber).ToString();
+        createButton.name = "Display " + (createButton.displayNumber).ToString();
         createButton.rObjectType = RObject.RObjectType.Display;
         menuButton.rObject = createButton;
 
@@ -68,7 +68,7 @@ public class DisplaysView : MonoBehaviour {
                     buttonImageName = display.imageName;
                 }
 
-                displayMenuButton.InitializeButtonProperties(display.title, buttonImageName, display.title);
+                displayMenuButton.InitializeButtonProperties(display.name, buttonImageName, display.name);
                 newDisplayButton.transform.parent = transform.GetComponentInChildren<GridLayoutGroup>().transform;
                 displayMenuButton.navTarget = "Display_Detail";
                 displayMenuButton.menuPanelObject = gameObject;

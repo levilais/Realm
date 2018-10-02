@@ -9,7 +9,7 @@ public class ImageSelectView : MonoBehaviour {
 
     private void OnEnable()
     {
-        Debug.Log("ActiveObject title on enable: " + RealmManager.realmManager.activeObject.title);
+        Debug.Log("ActiveObject title on enable: " + RealmManager.realmManager.activeObject.name);
         activeObject = RealmManager.realmManager.activeObject;
         PopulateHeader();
     }
@@ -18,6 +18,6 @@ public class ImageSelectView : MonoBehaviour {
     {
         ViewController viewController = transform.GetComponent<ViewController>();
         viewController.headerIcon.GetComponent<Image>().sprite = Resources.Load<Sprite>("Icons/PhotosIcon");
-        viewController.headerTitle.GetComponent<Text>().text = "Select Image For " + activeObject.title;
+        viewController.headerTitle.GetComponent<Text>().text = "Select Image For " + activeObject.name;
     }
 }

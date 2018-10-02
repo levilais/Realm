@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HostAccountInfo : MonoBehaviour {
+public class InfoView : MonoBehaviour {
 
     //public GameObject textfieldMenuItemPF; // This is our prefab object that will be exposed in the inspector
     //public GameObject inputScrollView;

@@ -4,9 +4,10 @@ using UnityEngine;
 
 [System.Serializable]
 public class RObject {
-    public string title;
+    public string name;
     public string imageName;
     public System.Guid uid;
+    public string displayID;
     public double displayNumber;
     public RPoint rPoint;
 
@@ -17,9 +18,10 @@ public class RObject {
     public RObjectType rObjectType;
 
     public RObject() {
-        title = "Default";
+        name = "Default";
         imageName = "Default";
         uid = System.Guid.NewGuid();
+        displayID = "Default";
         hasBeenPlaced = false;
         imageExists = false;
         rPoint = new RPoint();

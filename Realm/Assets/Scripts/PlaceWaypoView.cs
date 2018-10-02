@@ -27,7 +27,7 @@ public class PlaceWaypoView : MonoBehaviour {
     public void ProceedSequentially()
     {
         string anchorString = "Anchor";
-        string targetString = RealmManager.realmManager.activeObject.title;
+        string targetString = RealmManager.realmManager.activeObject.name;
 
         switch (stepInProcess) {
             case 0:
