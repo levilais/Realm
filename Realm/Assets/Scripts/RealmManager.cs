@@ -33,6 +33,7 @@ public class RealmManager : MonoBehaviour {
 
     public void RegisterActiveObject(RObject rObject)
     {
+        Debug.Log("Active object is " + rObject.name);
         RealmManager.realmManager.activeObject = rObject;
     }
 }

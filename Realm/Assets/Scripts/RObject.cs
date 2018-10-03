@@ -28,6 +28,32 @@ public class RObject {
         rObjectType = RObjectType.Default;
     }
 
+    public void SaveActiveObject() {
+        if (RealmManager.realmManager.activeObject.rObjectType == RObjectType.Display) {
+            int i = 0;
+            foreach (RObject display in RealmManager.realmManager.realm.displays)
+            {
+                if (display.uid == RealmManager.realmManager.activeObject.uid)
+                {
+                    RealmManager.realmManager.realm.displays[i] = RealmManager.realmManager.activeObject;
+                }
+                i += 1;
+            }
+        }
+        else if (RealmManager.realmManager.activeObject.rObjectType == RObjectType.Waypo) {
+            int i = 0;
+            foreach (RObject waypo in RealmManager.realmManager.realm.waypos)
+            {
+                if (waypo.uid == RealmManager.realmManager.activeObject.uid)
+                {
+                    RealmManager.realmManager.realm.waypos[i] = RealmManager.realmManager.activeObject;
+                }
+                i += 1;
+            }
+        }
+        DataManager.SaveData();
+    }
+
     public void PlaceObject()
     {
         RealmManager.realmManager.activeObject.hasBeenPlaced = true;
@@ -42,16 +68,7 @@ public class RObject {
                 break;
             case RObjectType.Waypo:
                 RealmManager.realmManager.activeObject.imageName = "Waypos";
-
-                int i = 0;
-                Debug.Log("trying to find match");
-                foreach (RObject waypo in RealmManager.realmManager.realm.waypos) {
-                    if (waypo.uid == RealmManager.realmManager.activeObject.uid) {
-                        RealmManager.realmManager.realm.waypos[i] = RealmManager.realmManager.activeObject;
-                        Debug.Log("match found");
-                    }
-                    i += 1;
-                }
+                SaveActiveObject();
                 break;
             case RObjectType.Display:
                 Debug.Log("Display type");

@@ -17,17 +17,24 @@ public class Textfield : MonoBehaviour
 
     string textfieldObjectName;
     bool contentIsAdjustedForKeyboard = false;
+    private string initialText;
 
     private void Start()
     {
         InitializeObjects();
-        textfieldObjectName = transform.parent.name;
+
+    }
+
+    private void OnEnable()
+    {
+        InitializeObjects();
     }
 
     private void InitializeObjects()
     {
-        textfieldOverlay = transform.GetComponentInParent<ViewManager>().TextfieldOverlay.gameObject.GetComponent<TextfieldOverlay>();
+        textfieldObjectName = transform.parent.name;
         inputField = transform.GetComponent<InputField>();
+        textfieldOverlay = transform.GetComponentInParent<ViewManager>().TextfieldOverlay.gameObject.GetComponent<TextfieldOverlay>();
 
         if (textFieldText != "Default") {
             inputField.text = textFieldText;
@@ -42,8 +49,11 @@ public class Textfield : MonoBehaviour
 #if UNITY_EDITOR
         if (inputField.isFocused && !contentIsAdjustedForKeyboard)
         {
+            Debug.Log("1");
             UpdateText();
+            Debug.Log("2");
             ShowOverlay();
+            Debug.Log("3");
         }
         if (!inputField.enabled && contentIsAdjustedForKeyboard)
         {
@@ -61,11 +71,14 @@ public class Textfield : MonoBehaviour
     }
 
     public void UpdateText() {
+        Debug.Log("setting currentText from inputField.text: " + inputField.text);
         textfieldOverlay.currentText = inputField.text;
     }
 
     public void ShowOverlay() {
-        textfieldOverlay.GetComponent<TextfieldOverlay>().textfield = gameObject.GetComponent<Textfield>();
+        initialText = inputField.text;
+        //textfieldOverlay.GetComponent<TextfieldOverlay>().textfield = gameObject.GetComponent<Textfield>();
+        //textfieldOverlay.currentText = inputField.text;
         textfieldOverlay.gameObject.SetActive(true);
         contentIsAdjustedForKeyboard = true;
     }
@@ -73,5 +86,66 @@ public class Textfield : MonoBehaviour
     public void HideOverlay() {
         textfieldOverlay.gameObject.SetActive(false);
         contentIsAdjustedForKeyboard = false;
+        SaveUpdatedText();
+    }
+
+    public void SaveUpdatedText() {
+        ViewController view = transform.GetComponentInParent<ViewController>();
+
+        string title = textFieldTitle;    
+        string text = inputField.text;
+
+        if (text != initialText)
+        {
+            Realm realm = RealmManager.realmManager.realm;
+            
+            if (view.menuName == ViewController.ViewName.Info)
+            {
+                switch (title)
+                {
+                    case "Realm Name":
+                        realm.realmName = text;
+                        break;
+                    case "Account Manager Name":
+                        realm.accountManagerName = text;
+                        break;
+                    case "Company Name":
+                        realm.companyName = text;
+                        break;
+                    case "Contact Email":
+                        realm.contactEmail = text;
+                        break;
+                    case "Contact Phone":
+                        realm.contactPhone = text;
+                        break;
+                    default:
+                        text = "Default";
+                        Debug.Log("Error");
+                        break;
+                }
+                DataManager.SaveData();
+            }
+
+            if (view.menuName == ViewController.ViewName.Display_Info)
+            {
+                switch (title)
+                {
+                    case "Display Name":
+                        RealmManager.realmManager.activeObject.name = text;
+                        break;
+                    case "Display ID":
+                        RealmManager.realmManager.activeObject.displayID = text;
+                        break;
+                    default:
+                        text = "Default";
+                        break;
+                }
+                RealmManager.realmManager.activeObject.SaveActiveObject();
+            }
+        }
+        else
+        {
+            Debug.Log("No new text found");
+        }
     }
 }

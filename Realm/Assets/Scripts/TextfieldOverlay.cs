@@ -14,8 +14,9 @@ public class TextfieldOverlay : MonoBehaviour
 
     private void OnEnable()
     {
+        Debug.Log("OnEnable called");
         titleText.GetComponent<Text>().text = textfield.textFieldTitle;
-        textfield.gameObject.GetComponent<InputField>().text = currentText;
+        //textfield.gameObject.GetComponent<InputField>().text = currentText;
         placeholderText.GetComponent<Text>().text = textfield.textFieldPlaceholderText;
         GetComponentInParent<Canvas>().sortingOrder = 2;
     }
@@ -28,6 +29,6 @@ public class TextfieldOverlay : MonoBehaviour
 
     private void Update()
     {
-        textFieldObj.GetComponent<InputField>().text = currentText;
+        //textFieldObj.GetComponent<InputField>().text = currentText;
     }
 }
