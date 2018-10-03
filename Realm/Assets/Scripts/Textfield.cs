@@ -17,6 +17,7 @@ public class Textfield : MonoBehaviour
 
     string textfieldObjectName;
     bool contentIsAdjustedForKeyboard = false;
+    bool editModeActive = false;
     private string initialText;
 
     private void Start()
@@ -43,18 +44,18 @@ public class Textfield : MonoBehaviour
         viewManager = transform.GetComponentInParent<ViewManager>().gameObject;
     }
 
+
+
     void Update()
     {
         // EDITOR
 #if UNITY_EDITOR
         if (inputField.isFocused && !contentIsAdjustedForKeyboard)
         {
-            Debug.Log("1");
             UpdateText();
-            Debug.Log("2");
             ShowOverlay();
-            Debug.Log("3");
         }
+
         if (!inputField.enabled && contentIsAdjustedForKeyboard)
         {
             HideOverlay();
@@ -64,6 +65,7 @@ public class Textfield : MonoBehaviour
 #else
         TouchScreenKeyboard keyboard = inputField.touchScreenKeyboard;
         if (inputField.touchScreenKeyboard.status == TouchScreenKeyboard.Status.Visible && !contentIsAdjustedForKeyboard) {
+        Debug.Log("this shouldn't be called");
             UpdateText();    
             ShowOverlay();
         }
@@ -71,14 +73,21 @@ public class Textfield : MonoBehaviour
     }
 
     public void UpdateText() {
-        Debug.Log("setting currentText from inputField.text: " + inputField.text);
-        textfieldOverlay.currentText = inputField.text;
+        if (editModeActive)
+        {
+            textfieldOverlay.currentText = inputField.text;
+        }
     }
 
     public void ShowOverlay() {
+        editModeActive = true;
         initialText = inputField.text;
-        //textfieldOverlay.GetComponent<TextfieldOverlay>().textfield = gameObject.GetComponent<Textfield>();
-        //textfieldOverlay.currentText = inputField.text;
+        textfieldOverlay.GetComponent<TextfieldOverlay>().textfield = gameObject.GetComponent<Textfield>();
+        textfieldOverlay.currentText = inputField.text;
+        if (editModeActive)
+        {
+            UpdateText();
+        }
         textfieldOverlay.gameObject.SetActive(true);
         contentIsAdjustedForKeyboard = true;
     }
@@ -86,6 +95,7 @@ public class Textfield : MonoBehaviour
     public void HideOverlay() {
         textfieldOverlay.gameObject.SetActive(false);
         contentIsAdjustedForKeyboard = false;
+        editModeActive = false;
         SaveUpdatedText();
     }
 
