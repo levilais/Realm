@@ -108,7 +108,6 @@ public class Textfield : MonoBehaviour
         if (text != initialText)
         {
             Realm realm = RealmManager.realmManager.realm;
-            
             if (view.menuName == ViewController.ViewName.Info)
             {
                 switch (title)
@@ -138,10 +137,12 @@ public class Textfield : MonoBehaviour
 
             if (view.menuName == ViewController.ViewName.Display_Info)
             {
+                bool newName = false;
                 switch (title)
                 {
                     case "Display Name":
                         RealmManager.realmManager.activeObject.name = text;
+                        newName = true;
                         break;
                     case "Display ID":
                         RealmManager.realmManager.activeObject.displayID = text;
@@ -151,6 +152,10 @@ public class Textfield : MonoBehaviour
                         break;
                 }
                 RealmManager.realmManager.activeObject.SaveActiveObject();
+                if (newName)
+                {
+                    transform.GetComponentInParent<DisplayInfoView>().PopulateHeader();
+                }
             }
         }
         else

@@ -13,12 +13,11 @@ public class DisplayInfoView : MonoBehaviour {
         PopulateHeader();
     }
 
-    private void PopulateHeader()
+    public void PopulateHeader()
     {
         ViewController viewController = transform.GetComponent<ViewController>();
         viewController.headerIcon.GetComponent<Image>().sprite = Resources.Load<Sprite>("Icons/DisplaysIcon");
         viewController.headerTitle.GetComponent<Text>().text = activeObject.name + " Info";
-
     }
 
 }
