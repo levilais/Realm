@@ -10,6 +10,7 @@ public class MenuButton : MonoBehaviour
     public string title;
     public string imageName;
     public string navTarget;
+    public bool isDisplayButton;
     public RObject rObject;
 
     public void InitializeButtonProperties(string buttonTitle, string buttonImageName, string buttonNavTarget)
@@ -23,29 +24,40 @@ public class MenuButton : MonoBehaviour
     public void UpdateButtonProperties()
     {
         // Set Name
-        transform.name = imageName;
+        transform.name = title;
 
         // Set Title
         Text titleText = transform.GetComponentInChildren<Text>();
         titleText.text = title;
 
-        // Set Default Image
         Button button = transform.GetComponentInChildren<Button>();
-        button.image.sprite = Resources.Load<Sprite>("Images/" + imageName);
 
-        // Set Pressed Image
-        Sprite imagePressed = Resources.Load<Sprite>("Images/" + imageName + "Pressed");
-        SpriteState spriteState = new SpriteState();
-        spriteState.pressedSprite = imagePressed;
-        button.spriteState = spriteState;
+        string imageAddressPrefix;
+        if (isDisplayButton) {
+            imageAddressPrefix = "DisplayImages/";
+        } else {
+            // Set Default Image
+            imageAddressPrefix = "Images/";
+            // Set Pressed Image
+            Sprite imagePressed = Resources.Load<Sprite>(imageAddressPrefix + imageName + "Pressed");
+            SpriteState spriteState = new SpriteState();
+            spriteState.pressedSprite = imagePressed;
+            button.spriteState = spriteState;
+        }
+
+        button.image.sprite = Resources.Load<Sprite>(imageAddressPrefix + imageName);
     }
 
     public void PerformSegueToTarget()
     {
+        Debug.Log("PerformSegueToTarget attempted");
         if (rObject.rObjectType != RObject.RObjectType.Default)
         {
+            Debug.Log("2");
             RealmManager.realmManager.RegisterActiveObject(rObject);
+            Debug.Log("3");
             CreateDisplayIfNecessary();
+            Debug.Log("4");
         }
         ViewManager.viewManager.performSegue(navTarget, menuPanelObject);
     }

@@ -482,6 +482,7 @@ MonoBehaviour:
   title: 
   imageName: 
   navTarget: 
+  isDisplayButton: 0
   rObject:
     name: Default
     imageName: Default
@@ -1225,6 +1226,7 @@ MonoBehaviour:
   title: 
   imageName: 
   navTarget: 
+  isDisplayButton: 0
   rObject:
     name: Default
     imageName: Default
@@ -3432,7 +3434,7 @@ Prefab:
     - target: {fileID: 224128250296704372, guid: c74b0aac69d814ec9a0c752f071cfc34,
         type: 2}
       propertyPath: m_SizeDelta.x
-      value: 10
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114078931295821356, guid: c74b0aac69d814ec9a0c752f071cfc34,
         type: 2}
@@ -3527,6 +3529,26 @@ Prefab:
         type: 2}
       propertyPath: hasDynamicMenuButtonTitles
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114331303649592770, guid: c74b0aac69d814ec9a0c752f071cfc34,
+        type: 2}
+      propertyPath: m_CellSize.x
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 114331303649592770, guid: c74b0aac69d814ec9a0c752f071cfc34,
+        type: 2}
+      propertyPath: m_CellSize.y
+      value: 140
+      objectReference: {fileID: 0}
+    - target: {fileID: 114331303649592770, guid: c74b0aac69d814ec9a0c752f071cfc34,
+        type: 2}
+      propertyPath: m_Spacing.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224128250296704372, guid: c74b0aac69d814ec9a0c752f071cfc34,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.0000013476919
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
@@ -5086,6 +5108,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MenuButtonPF: {fileID: 1348476042403918, guid: 75df25727a496485caca4a3dbf3671b5,
     type: 2}
+  DisplayButtonPF: {fileID: 1703958657166960, guid: 7b343ae83edda4922a1ee1bcef22d706,
+    type: 2}
 --- !u!1001 &1312019523
 Prefab:
   m_ObjectHideFlags: 0
@@ -5981,6 +6005,7 @@ MonoBehaviour:
   title: 
   imageName: 
   navTarget: 
+  isDisplayButton: 0
   rObject:
     name: Default
     imageName: Default
@@ -6620,6 +6645,7 @@ MonoBehaviour:
   title: 
   imageName: 
   navTarget: 
+  isDisplayButton: 0
   rObject:
     name: Default
     imageName: Default

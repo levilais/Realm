@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class DisplaysView : MonoBehaviour {
 
     public GameObject MenuButtonPF;
+    public GameObject DisplayButtonPF;
 
     public void OnEnable()
     {
@@ -34,8 +35,9 @@ public class DisplaysView : MonoBehaviour {
         Debug.Log("displays count " + RealmManager.realmManager.realm.displays.Count);
 
         // create "New" button
-        GameObject newMenuButton = (GameObject)Instantiate(MenuButtonPF, transform);
+        GameObject newMenuButton = (GameObject)Instantiate(DisplayButtonPF, transform);
         MenuButton menuButton = newMenuButton.GetComponent<MenuButton>();
+        menuButton.isDisplayButton = true;
 
         // "PlacementView" will need to be a Display creation secquence
         menuButton.InitializeButtonProperties("Create", "New", "Display_Detail");
@@ -48,32 +50,36 @@ public class DisplaysView : MonoBehaviour {
         createButton.rObjectType = RObject.RObjectType.Display;
         menuButton.rObject = createButton;
 
+        newMenuButton.GetComponentInChildren<Text>().gameObject.SetActive(false);
+        newMenuButton.GetComponentInChildren<DisplayOverlay>().gameObject.SetActive(false);
+
         // populate the rest
         if (RealmManager.realmManager.realm.displays.Count > 0) {
             for (int i = 0; i < RealmManager.realmManager.realm.displays.Count; i++)
             {
                 // Create new instances of our prefab until we've created as many as we specified
                 RObject display = RealmManager.realmManager.realm.displays[i];
-                GameObject newDisplayButton = (GameObject)Instantiate(MenuButtonPF, transform);
+                GameObject newDisplayButton = (GameObject)Instantiate(DisplayButtonPF, transform);
                 MenuButton displayMenuButton = newDisplayButton.GetComponent<MenuButton>();
 
                 string buttonImageName;
 
                 if (!display.imageExists)
                 {
-                    buttonImageName = "Displays";
+                    buttonImageName = "Default";
                 }
                 else
                 {
                     buttonImageName = display.imageName;
                 }
 
+                displayMenuButton.rObject = display;
+                displayMenuButton.rObject.rObjectType = RObject.RObjectType.Display;
+                displayMenuButton.isDisplayButton = true;
                 displayMenuButton.InitializeButtonProperties(display.name, buttonImageName, display.name);
                 newDisplayButton.transform.parent = transform.GetComponentInChildren<GridLayoutGroup>().transform;
                 displayMenuButton.navTarget = "Display_Detail";
                 displayMenuButton.menuPanelObject = gameObject;
-                displayMenuButton.rObject = display;
-                displayMenuButton.rObject.rObjectType = RObject.RObjectType.Display;
             }
         }
     }
