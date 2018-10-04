@@ -32,8 +32,6 @@ public class DisplaysView : MonoBehaviour {
 
     private void PopulateDynamicButtons()
     {
-        Debug.Log("displays count " + RealmManager.realmManager.realm.displays.Count);
-
         // create "New" button
         GameObject newMenuButton = (GameObject)Instantiate(DisplayButtonPF, transform);
         MenuButton menuButton = newMenuButton.GetComponent<MenuButton>();
@@ -53,7 +51,6 @@ public class DisplaysView : MonoBehaviour {
         newMenuButton.GetComponentInChildren<Text>().gameObject.SetActive(false);
         newMenuButton.GetComponentInChildren<DisplayOverlay>().gameObject.SetActive(false);
 
-        // populate the rest
         if (RealmManager.realmManager.realm.displays.Count > 0) {
             for (int i = 0; i < RealmManager.realmManager.realm.displays.Count; i++)
             {
@@ -62,21 +59,10 @@ public class DisplaysView : MonoBehaviour {
                 GameObject newDisplayButton = (GameObject)Instantiate(DisplayButtonPF, transform);
                 MenuButton displayMenuButton = newDisplayButton.GetComponent<MenuButton>();
 
-                string buttonImageName;
-
-                if (!display.imageExists)
-                {
-                    buttonImageName = "Default";
-                }
-                else
-                {
-                    buttonImageName = display.imageName;
-                }
-
                 displayMenuButton.rObject = display;
                 displayMenuButton.rObject.rObjectType = RObject.RObjectType.Display;
                 displayMenuButton.isDisplayButton = true;
-                displayMenuButton.InitializeButtonProperties(display.name, buttonImageName, display.name);
+                displayMenuButton.InitializeButtonProperties(display.name, display.imageName, display.name);
                 newDisplayButton.transform.parent = transform.GetComponentInChildren<GridLayoutGroup>().transform;
                 displayMenuButton.navTarget = "Display_Detail";
                 displayMenuButton.menuPanelObject = gameObject;
