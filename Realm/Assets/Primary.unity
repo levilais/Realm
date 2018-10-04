@@ -2681,7 +2681,7 @@ MonoBehaviour:
   subMenuItems: 
   subMenuItemNames: []
   leftButtonName: 5
-  rightButtonName: 16
+  rightButtonName: 11
   hasDynamicMenuButtonTitles: 1
   hasDynamicHeaderTitle: 1
   isSubview: 0
@@ -6558,8 +6558,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: ProceedSequentially
+      - m_Target: {fileID: 800729664}
+        m_MethodName: PickImage
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

@@ -29,6 +29,22 @@ public class RealmManager : MonoBehaviour {
         }
 
         DataManager.LoadData();
+
+        //CreateDefaultImages();
+    }
+
+    public void CreateDefaultImages() {
+        Debug.Log("displayImages in Realm before: " + RealmManager.realmManager.realm.displayImages.Count);
+
+        if (RealmManager.realmManager.realm.displayImages.Count <= 0) {
+            for (int i = 0; i < 3; i++)
+            {
+                string imageNameSuffix = "0" + (i + 1);
+                string photoName = "DisplayImage" + imageNameSuffix;
+                RealmManager.realmManager.realm.displayImages.Add(Resources.Load<Texture2D>("DisplayImages/" + photoName));
+            }
+        }
+        Debug.Log("displayImages in Realm after: " + RealmManager.realmManager.realm.displayImages.Count);
     }
 
     public void RegisterActiveObject(RObject rObject)

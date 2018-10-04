@@ -14,6 +14,7 @@ public class Realm {
     public RObject anchor;
     public List<RObject> waypos;
     public List<RObject> displays;
+    public List<Texture2D> displayImages;
     public double lastDisplayNumber;
 
     public Realm()
@@ -27,6 +28,7 @@ public class Realm {
         anchor = new RObject();
         waypos = new List<RObject>();
         displays = new List<RObject>();
+        displayImages = new List<Texture2D>();
         lastDisplayNumber = 0;
     }
 }
