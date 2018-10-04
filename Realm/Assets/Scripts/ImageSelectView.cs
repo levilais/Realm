@@ -10,7 +10,6 @@ public class ImageSelectView : MonoBehaviour {
 
     private void OnEnable()
     {
-        Debug.Log("ActiveObject title on enable: " + RealmManager.realmManager.activeObject.name);
         activeObject = RealmManager.realmManager.activeObject;
         PopulateHeader();
         PopulateImages();
@@ -33,7 +32,7 @@ public class ImageSelectView : MonoBehaviour {
         currentDisplayImage.InitializePhoto();
         currentDisplayImage.transform.parent = transform.GetComponentInChildren<GridLayoutGroup>().transform;
 
-        //Debug.Log("RealmDisplay images at PopulateImages: " + RealmManager.realmManager.realm.displayImages.Count);
+        Debug.Log("RealmDisplay images at PopulateImages: " + RealmManager.realmManager.realm.displayImages.Count);
 
         {
             for (int i = 0; i < 3; i++)

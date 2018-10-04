@@ -41,7 +41,7 @@ public class RealmManager : MonoBehaviour {
             {
                 string imageNameSuffix = "0" + (i + 1);
                 string photoName = "DisplayImage" + imageNameSuffix;
-                RealmManager.realmManager.realm.displayImages.Add(Resources.Load<Texture2D>("DisplayImages/" + photoName));
+                RealmManager.realmManager.realm.displayImages.Add(Resources.Load<Sprite>("DisplayImages/" + photoName));
             }
         }
         Debug.Log("displayImages in Realm after: " + RealmManager.realmManager.realm.displayImages.Count);
@@ -49,7 +49,6 @@ public class RealmManager : MonoBehaviour {
 
     public void RegisterActiveObject(RObject rObject)
     {
-        Debug.Log("Active object is " + rObject.name);
         RealmManager.realmManager.activeObject = rObject;
     }
 }

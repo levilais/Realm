@@ -53,18 +53,14 @@ public class MenuButton : MonoBehaviour
         Debug.Log("PerformSegueToTarget attempted");
         if (rObject.rObjectType != RObject.RObjectType.Default)
         {
-            Debug.Log("2");
             RealmManager.realmManager.RegisterActiveObject(rObject);
-            Debug.Log("3");
             CreateDisplayIfNecessary();
-            Debug.Log("4");
         }
         ViewManager.viewManager.performSegue(navTarget, menuPanelObject);
     }
 
     public void CreateDisplayIfNecessary() {
         if (title == "Create") {
-            Debug.Log("creating...");
             RealmManager.realmManager.realm.displays.Add(rObject);
             RealmManager.realmManager.realm.lastDisplayNumber = rObject.displayNumber;
             DataManager.SaveData();
