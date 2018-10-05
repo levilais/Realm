@@ -18,6 +18,10 @@ public class DisplayImage : MonoBehaviour
         image.sprite = Resources.Load<Sprite>("DisplayImages/" + photoName);
     }
 
+    public void ChangeSprite(Sprite newSprite) {
+        image.sprite = newSprite;
+    }
+
     public void SelectPhoto()
     {
         foreach (Transform imageChild in transform.GetComponentInParent<GridLayoutGroup>().transform)
