@@ -63,6 +63,7 @@ public class DisplaysView : MonoBehaviour {
                 displayMenuButton.rObject.rObjectType = RObject.RObjectType.Display;
                 displayMenuButton.isDisplayButton = true;
                 displayMenuButton.InitializeButtonProperties(display.name, display.imageName, display.name);
+
                 newDisplayButton.transform.parent = transform.GetComponentInChildren<GridLayoutGroup>().transform;
                 displayMenuButton.navTarget = "Display_Detail";
                 displayMenuButton.menuPanelObject = gameObject;

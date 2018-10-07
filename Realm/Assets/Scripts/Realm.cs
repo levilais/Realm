@@ -14,7 +14,8 @@ public class Realm {
     public RObject anchor;
     public List<RObject> waypos;
     public List<RObject> displays;
-    public List<Sprite> displayImages;
+    //public List<Sprite> displayImages;
+    public List<string> displayImageAddresses;
     public double lastDisplayNumber;
 
     public Realm()
@@ -28,7 +29,7 @@ public class Realm {
         anchor = new RObject();
         waypos = new List<RObject>();
         displays = new List<RObject>();
-        displayImages = new List<Sprite>();
+        displayImageAddresses = new List<string>();
         lastDisplayNumber = 0;
     }
 }

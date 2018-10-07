@@ -10,6 +10,7 @@ public class RObject {
     public string displayID;
     public double displayNumber;
     public RPoint rPoint;
+    //public string currentImageAddress;
 
     public bool hasBeenPlaced;
     public bool imageExists;
@@ -26,6 +27,7 @@ public class RObject {
         imageExists = false;
         rPoint = new RPoint();
         rObjectType = RObjectType.Default;
+        //currentImageAddress = "DefaultImage";
     }
 
     public void SaveActiveObject() {

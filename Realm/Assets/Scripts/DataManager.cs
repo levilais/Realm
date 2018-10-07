@@ -7,9 +7,8 @@ using UnityEngine;
 
 public static class DataManager
 {
-
     // To erase persistent data: manually change this to "true", run the app, stop the app, change it back to "false".
-    public static bool eraseModeActive = false;
+    public static bool eraseModeActive = true;
 
     public static Realm RealmData;
 

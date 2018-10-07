@@ -1,7 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 using UnityEngine.UI;
+using CI.QuickSave;
 
 public class ImageSelectView : MonoBehaviour {
 
@@ -9,6 +11,7 @@ public class ImageSelectView : MonoBehaviour {
 
     private RObject activeObject;
     public DisplayImage imageToChange;
+    public Texture2D displayTexture;
 
     private void OnEnable()
     {
@@ -85,18 +88,38 @@ public class ImageSelectView : MonoBehaviour {
             if (path != null)
             {
                 // Create Texture from selected image
-                Texture2D texture = NativeGallery.LoadImageAtPath(path, maxSize);
+                Texture2D texture = NativeGallery.LoadImageAtPath(path, maxSize, false, true, false);
+                //Texture2D copy = duplicateTexture(texture);
+                Debug.Log("before width: " + texture.width);
+
+                string imagePath = Application.persistentDataPath + "image_name.png";
+                File.WriteAllBytes(imagePath, texture.GetRawTextureData());
+
+                Texture2D loaded = new Texture2D(1, 1);
+                if (File.Exists(imagePath))
+                {
+                    Debug.Log("File exists");
+                    byte[] imageBytes = File.ReadAllBytes(imagePath);
+                    loaded.LoadRawTextureData(imageBytes);
+                    loaded.Apply();
+                } else {
+                    Debug.Log("File doesn't exist");
+                }
 
                 if (texture == null)
                 {
+                    Debug.Log("log 1");
                     Debug.Log("Couldn't load texture from " + path);
                     return;
                 }
 
-                Rect rect = new Rect(0, 0, texture.width, texture.height);
+                Debug.Log("after width: " + loaded.width);
+                Rect rect = new Rect(0, 0, loaded.width, loaded.height);
                 Vector2 vector2 = new Vector2(0.5f, 0.5f);
-                Sprite sprite = Sprite.Create(texture, rect, vector2);
+                Sprite sprite = Sprite.Create(loaded, rect, vector2);
                 imageToChange.ChangeSprite(sprite);
+
+                //Debug.Log("Display Images Count After: " + RealmManager.realmManager.realm.displayImageAddresses.Count);
 
                 //// Assign texture to a temporary quad and destroy it after 5 seconds
                 //GameObject quad = GameObject.CreatePrimitive(PrimitiveType.Quad);
